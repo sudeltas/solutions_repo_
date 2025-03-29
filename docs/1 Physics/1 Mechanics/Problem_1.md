@@ -100,32 +100,51 @@ $$
 
 ## 4. Implementation
 
+python
 import numpy as np
 import matplotlib.pyplot as plt
 
-# Parameters
-v0 = 20.0  # initial velocity (m/s)
-g = 9.8    # gravity (m/s^2)
-theta_deg = np.linspace(0, 90, 91)  # angles from 0 to 90 degrees
-theta_rad = np.radians(theta_deg)
+# Constants
+g = 9.81  # m/s^2
 
-# Range function (ideal case, y0 = 0)
-def range_theta(v0, theta, g):
+# Function to calculate range
+def projectile_range(v0, theta_deg, g=9.81):
+    theta = np.radians(theta_deg)
     return (v0**2 * np.sin(2 * theta)) / g
 
-# Compute ranges
-R = range_theta(v0, theta_rad, g)
+# Simulation parameters
+v0_values = [10, 15, 20]  # Initial velocities (m/s)
+theta_deg = np.arange(0, 91, 1)  # Angles from 0 to 90 degrees
 
-# Plotting Range vs Angle
+# Plot range vs angle for different v0
 plt.figure(figsize=(10, 6))
-plt.plot(theta_deg, R, label=f'v0 = {v0} m/s, g = {g} m/s²')
+for v0 in v0_values:
+    R = [projectile_range(v0, t) for t in theta_deg]
+    plt.plot(theta_deg, R, label=f'v0 = {v0} m/s')
+
 plt.xlabel('Angle of Projection (degrees)')
 plt.ylabel('Range (m)')
-plt.title('Range vs. Angle of Projection')
-plt.grid(True)
+plt.title('Projectile Range vs Angle of Projection')
 plt.legend()
+plt.grid(True)
 plt.show()
 
+# Trajectory simulation for v0 = 15 m/s, theta = 45°
+v0 = 15
+theta = np.radians(45)
+t_flight = 2 * v0 * np.sin(theta) / g
+t = np.linspace(0, t_flight, 100)
+x = v0 * np.cos(theta) * t
+y = v0 * np.sin(theta) * t - 0.5 * g * t**2
+
+plt.figure(figsize=(10, 6))
+plt.plot(x, y, label='Trajectory (v0 = 15 m/s, θ = 45°)')
+plt.xlabel('Horizontal Distance (m)')
+plt.ylabel('Height (m)')
+plt.title('Projectile Trajectory')
+plt.legend()
+plt.grid(True)
+plt.show()
 
 ## Outputs
 
