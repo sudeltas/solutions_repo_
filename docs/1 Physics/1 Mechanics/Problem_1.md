@@ -126,35 +126,11 @@ plt.ylabel('Range (m)')
 plt.title('Range vs. Angle of Projection')
 plt.grid(True)
 plt.legend()
-
-# Test different v0 and g
-v0_alt = 30.0
-g_alt = 1.62  # Moon's gravity
-R_alt_v0 = range_theta(v0_alt, theta_rad, g)
-R_alt_g = range_theta(v0, theta_rad, g_alt)
-plt.plot(theta_deg, R_alt_v0, label=f'v0 = {v0_alt} m/s, g = {g} m/s²')
-plt.plot(theta_deg, R_alt_g, label=f'v0 = {v0} m/s, g = {g_alt} m/s² (Moon)')
-plt.legend()
 plt.show()
 
-# Simulate trajectory for a specific angle
-theta_sample = np.radians(45)
-t_flight = 2 * v0 * np.sin(theta_sample) / g
-t = np.linspace(0, t_flight, 100)
-x = v0 * np.cos(theta_sample) * t
-y = v0 * np.sin(theta_sample) * t - 0.5 * g * t**2
+## Outputs
 
-plt.figure(figsize=(10, 6))
-plt.plot(x, y)
-plt.xlabel('Horizontal Distance (m)')
-plt.ylabel('Height (m)')
-plt.title('Projectile Trajectory at 45°')
-plt.grid(True)
-plt.show()
-
-### Outputs
-1. *Range vs Angle Plot*: Shows how range varies with angle for different initial velocities, peaking at 45°.
-2. *Trajectory Plot*: Displays the parabolic path for \(v_0 = 15 \, \text{m/s}, \theta = 45^\circ\).
+- **Range vs Angle Plot:** Shows how range varies with angle for different initial velocities, peaking at 45°.
 
 ## 5. Discussion
 
