@@ -100,7 +100,7 @@ $$
 
 ## 4. Implementation
 
-python
+```python
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -145,6 +145,7 @@ plt.title('Projectile Trajectory')
 plt.legend()
 plt.grid(True)
 plt.show()
+```
 
 ## Outputs
 
