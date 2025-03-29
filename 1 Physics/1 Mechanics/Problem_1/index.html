@@ -287,26 +287,43 @@ $$</p>
 <li><em>Air Resistance</em>: Add drag force, solve numerically.</li>
 </ul>
 <h2 id="4-implementation">4. Implementation</h2>
-<p>import numpy as np
+<p>python
+import numpy as np
 import matplotlib.pyplot as plt</p>
-<h1 id="parameters">Parameters</h1>
-<p>v0 = 20.0  # initial velocity (m/s)
-g = 9.8    # gravity (m/s^2)
-theta_deg = np.linspace(0, 90, 91)  # angles from 0 to 90 degrees
-theta_rad = np.radians(theta_deg)</p>
-<h1 id="range-function-ideal-case-y0-0">Range function (ideal case, y0 = 0)</h1>
-<p>def range_theta(v0, theta, g):
+<h1 id="constants">Constants</h1>
+<p>g = 9.81  # m/s^2</p>
+<h1 id="function-to-calculate-range">Function to calculate range</h1>
+<p>def projectile_range(v0, theta_deg, g=9.81):
+    theta = np.radians(theta_deg)
     return (v0**2 * np.sin(2 * theta)) / g</p>
-<h1 id="compute-ranges">Compute ranges</h1>
-<p>R = range_theta(v0, theta_rad, g)</p>
-<h1 id="plotting-range-vs-angle">Plotting Range vs Angle</h1>
+<h1 id="simulation-parameters">Simulation parameters</h1>
+<p>v0_values = [10, 15, 20]  # Initial velocities (m/s)
+theta_deg = np.arange(0, 91, 1)  # Angles from 0 to 90 degrees</p>
+<h1 id="plot-range-vs-angle-for-different-v0">Plot range vs angle for different v0</h1>
 <p>plt.figure(figsize=(10, 6))
-plt.plot(theta_deg, R, label=f'v0 = {v0} m/s, g = {g} m/s²')
-plt.xlabel('Angle of Projection (degrees)')
+for v0 in v0_values:
+    R = [projectile_range(v0, t) for t in theta_deg]
+    plt.plot(theta_deg, R, label=f'v0 = {v0} m/s')</p>
+<p>plt.xlabel('Angle of Projection (degrees)')
 plt.ylabel('Range (m)')
-plt.title('Range vs. Angle of Projection')
-plt.grid(True)
+plt.title('Projectile Range vs Angle of Projection')
 plt.legend()
+plt.grid(True)
+plt.show()</p>
+<h1 id="trajectory-simulation-for-v0-15-ms-theta-45">Trajectory simulation for v0 = 15 m/s, theta = 45°</h1>
+<p>v0 = 15
+theta = np.radians(45)
+t_flight = 2 * v0 * np.sin(theta) / g
+t = np.linspace(0, t_flight, 100)
+x = v0 * np.cos(theta) * t
+y = v0 * np.sin(theta) * t - 0.5 * g * t**2</p>
+<p>plt.figure(figsize=(10, 6))
+plt.plot(x, y, label='Trajectory (v0 = 15 m/s, θ = 45°)')
+plt.xlabel('Horizontal Distance (m)')
+plt.ylabel('Height (m)')
+plt.title('Projectile Trajectory')
+plt.legend()
+plt.grid(True)
 plt.show()</p>
 <h2 id="outputs">Outputs</h2>
 <ul>
