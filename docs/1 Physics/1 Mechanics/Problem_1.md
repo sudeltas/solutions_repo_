@@ -101,7 +101,7 @@ $$
 ## 4. Implementation
 
 
-
+$$
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -127,6 +127,7 @@ plt.title('Range vs. Angle of Projection')
 plt.grid(True)
 plt.legend()
 plt.show()
+$$
 
 ## Outputs
 
