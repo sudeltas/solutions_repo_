@@ -100,7 +100,7 @@ $$
 
 ## 4. Implementation
 
-Below is a Python script to simulate and visualize projectile motion, including range vs. angle and trajectory plots.
+
 
 import numpy as np
 import matplotlib.pyplot as plt
