@@ -129,7 +129,7 @@ plt.show()
 
 ## Outputs
 
-- **Range vs Angle Plot:** Shows how range varies with angle for different initial velocities, peaking at 45°...X
+- **Range vs Angle Plot:** Shows how range varies with angle for different initial velocities, peaking at 45°..
 
 ## 5. Discussion
 
