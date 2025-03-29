@@ -28,8 +28,10 @@ $$
 
 #### Vertical Motion
 With \( a_y = -g \):
-\[ v_y(t) = v_{0y} - g t = v_0 \sin\theta - g t \]
-\[ y(t) = v_0 \sin\theta \cdot t - \frac{1}{2} g t^2 \]
+$$
+ v_y(t) = v_{0y} - g t = v_0 \sin\theta - g t 
+y(t) = v_0 \sin\theta \cdot t - \frac{1}{2} g t^2 
+$$
 
 These are parametric equations describing a parabolic trajectory. The "family of solutions" arises from varying \( v_0 \), \( \theta \), \( g \), and initial height \( y_0 \) (if not zero).
 
