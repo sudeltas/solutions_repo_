@@ -56,6 +56,7 @@ $$
 This is a linear second-order differential equation solvable using standard methods (e.g., undetermined coefficients).
 
 📊 2. Analysis of Dynamics
+
 🔁 Parameter Influence
 <table>
   <thead>
