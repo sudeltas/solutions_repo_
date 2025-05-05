@@ -15,13 +15,11 @@ The motion is broken into two components:
 #Initial velocity components:
 
 $v_{0x} = v_0 \cos(\theta)$
-
 $v_{0y} = v_0 \sin(\theta)$
 
 Position functions:
 
 $x(t) = v_0 \cos(\theta) \cdot t$
-
 $y(t) = v_0 \sin(\theta) \cdot t - \frac{1}{2} g t^2$
 
 #⏱️ Time of Flight
@@ -151,6 +149,8 @@ Introduce drag force: $F_d = -kv$ (linear) or $F_d = -kv^2$ (quadratic)
 </table>
 
 ✅ Conclusion
-Projectile motion is a powerful model that reveals deep physical insights using relatively simple mathematics. By changing angle, speed, and environment, we unlock a vast space of real-world applications — from sports to space science.
+
+Projectile motion is a powerful model that reveals deep physical insights using relatively simple mathematics. 
+By changing angle, speed, and environment, we unlock a vast space of real-world applications — from sports to space science.
 
 ![alt text](image-1.png)
