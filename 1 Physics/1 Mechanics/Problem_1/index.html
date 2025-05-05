@@ -172,30 +172,30 @@
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
 <h1 id="problem-1">Problem 1</h1>
-<p>📘 Projectile Motion: Investigating Range as a Function of Angle
-🎯 1. Theoretical Background
-Projectile motion describes the motion of an object thrown into the air, subject only to gravitational acceleration.</p>
-<p>🧮 Equations of Motion
-The motion is broken into two components:</p>
-<p>Horizontal (x-axis)</p>
-<p>Vertical (y-axis)</p>
-<p>Initial velocity components:</p>
+<h1 id="projectile-motion-investigating-range-as-a-function-of-angle">📘 Projectile Motion: Investigating Range as a Function of Angle</h1>
+<h1 id="1-theoretical-background">🎯 1. Theoretical Background</h1>
+<p>Projectile motion describes the motion of an object thrown into the air, subject only to gravitational acceleration.</p>
+<h1 id="equations-of-motion">🧮 Equations of Motion</h1>
+<p>The motion is broken into two components:</p>
+<p>1.Horizontal (x-axis)</p>
+<p>2.Vertical (y-axis)</p>
+<h1 id="initial-velocity-components">Initial velocity components:</h1>
 <p><span class="arithmatex">\(v_{0x} = v_0 \cos(\theta)\)</span></p>
 <p><span class="arithmatex">\(v_{0y} = v_0 \sin(\theta)\)</span></p>
 <p>Position functions:</p>
 <p><span class="arithmatex">\(x(t) = v_0 \cos(\theta) \cdot t\)</span></p>
 <p><span class="arithmatex">\(y(t) = v_0 \sin(\theta) \cdot t - \frac{1}{2} g t^2\)</span></p>
-<p>⏱️ Time of Flight
-For a projectile launched and landing at the same height:
-<span class="arithmatex">\(T = \frac{2v_0 \sin(\theta)}{g}\)</span>
-📏 Horizontal Range
-Using time of flight in the x-position:
-<span class="arithmatex">\(R = v_{0x} \cdot T\)</span>
-<span class="arithmatex">\(R = \frac{v_0^2 \sin(2\theta)}{g}\)</span>
-Range is maximum when <span class="arithmatex">\(\theta = 45^\circ\)</span> because <span class="arithmatex">\(\sin(2\theta)\)</span> is maximum at <span class="arithmatex">\(90^\circ\)</span>.
-📊 2. Detailed Python Simulation
-💡 Objective
-Simulate and visualize how the range changes with projection angle. Also show effects of varying initial speed and gravity.</p>
+<h1 id="time-of-flight">⏱️ Time of Flight</h1>
+<p>For a projectile launched and landing at the same height:</p>
+<p><span class="arithmatex">\(T = \frac{2v_0 \sin(\theta)}{g}\)</span></p>
+<h1 id="horizontal-range">📏 Horizontal Range</h1>
+<p>Using time of flight in the x-position:</p>
+<p><span class="arithmatex">\(R = v_{0x} \cdot T\)</span></p>
+<p><span class="arithmatex">\(R = \frac{v_0^2 \sin(2\theta)}{g}\)</span></p>
+<p>Range is maximum when <span class="arithmatex">\(\theta = 45^\circ\)</span> because <span class="arithmatex">\(\sin(2\theta)\)</span> is maximum at <span class="arithmatex">\(90^\circ\)</span>.</p>
+<h1 id="2-detailed-python-simulation">📊 2. Detailed Python Simulation</h1>
+<p>💡 Objective</p>
+<p>Simulate and visualize how the range changes with projection angle. Also show effects of varying initial speed and gravity.</p>
 <pre><code class="language-Python">import numpy as np
 import matplotlib.pyplot as plt
 
@@ -253,20 +253,20 @@ plt.show()
 </tr>
 </tbody>
 </table>
-<p>🌐 4. Real-World Adaptations
-🏔 Uneven Terrain
-If the launch and landing heights differ (e.g., launched from a cliff or building), the vertical motion equation becomes:
-$$
+<h1 id="4-real-world-adaptations">🌐 4. Real-World Adaptations</h1>
+<h1 id="uneven-terrain">🏔 Uneven Terrain</h1>
+<p>If the launch and landing heights differ (e.g., launched from a cliff or building), the vertical motion equation becomes:</p>
+<div class="arithmatex">\[
 y(t) = v_0 \sin(\theta)t - \frac{1}{2}gt^2
-$$
-$$
+\]</div>
+<div class="arithmatex">\[
 y(t) = v_0 \sin(\theta)t - \frac{1}{2}gt^2
-$$
-💨 With Air Resistance
-Introduce drag force: <span class="arithmatex">\(F_d = -kv\)</span> (linear) or <span class="arithmatex">\(F_d = -kv^2\)</span> (quadratic)</p>
+\]</div>
+<h1 id="with-air-resistance">💨 With Air Resistance</h1>
+<p>Introduce drag force: <span class="arithmatex">\(F_d = -kv\)</span> (linear) or <span class="arithmatex">\(F_d = -kv^2\)</span> (quadratic)</p>
 <p>Requires numerical methods (Euler, Runge-Kutta)</p>
-<p>Not analytically solvable in closed form
-🚧 6. Limitations &amp; Future Improvements</p>
+<p>Not analytically solvable in closed form</p>
+<h1 id="6-limitations-future-improvements">🚧 6. Limitations &amp; Future Improvements</h1>
 <table>
 <thead>
 <tr>
