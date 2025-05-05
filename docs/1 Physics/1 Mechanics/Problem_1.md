@@ -117,11 +117,10 @@ y(t) = v_0 \sin(\theta)t - \frac{1}{2}gt^2
 $$
 
 #💨 With Air Resistance
+
 Introduce drag force: $F_d = -kv$ (linear) or $F_d = -kv^2$ (quadratic)
 
-Requires numerical methods (Euler, Runge-Kutta)
 
-Not analytically solvable in closed form
 
 #🚧 6. Limitations & Future Improvements
 <table>
