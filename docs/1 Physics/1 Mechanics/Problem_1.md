@@ -15,6 +15,7 @@ The motion is broken into two components:
 #Initial velocity components:
 
 $v_{0x} = v_0 \cos(\theta)$
+
 $v_{0y} = v_0 \sin(\theta)$
 
 Position functions:
@@ -86,21 +87,22 @@ plt.show()
   <tbody>
     <tr>
       <td>Initial Velocity</td>
-      <td>$v_0$</td>
-      <td>$R \propto v_0^2$ → Quadratic increase</td>
+      <td>&dollar;v_0&dollar;</td>
+      <td>&dollar;R \propto v_0^2&dollar; → Quadratic increase</td>
     </tr>
     <tr>
       <td>Gravity</td>
-      <td>$g$</td>
-      <td>$R \propto \frac{1}{g}$ → Inversely related</td>
+      <td>&dollar;g&dollar;</td>
+      <td>&dollar;R \propto \frac{1}{g}&dollar; → Inversely related</td>
     </tr>
     <tr>
       <td>Angle</td>
-      <td>$\theta$</td>
-      <td>$R \propto \sin(2\theta)$ → Max at $45^\circ$</td>
+      <td>&dollar;\theta&dollar;</td>
+      <td>&dollar;R \propto \sin(2\theta)&dollar; → Max at &dollar;45^\circ&dollar;</td>
     </tr>
   </tbody>
 </table>
+
 
 #🌐 4. Real-World Adaptations
 #🏔 Uneven Terrain
