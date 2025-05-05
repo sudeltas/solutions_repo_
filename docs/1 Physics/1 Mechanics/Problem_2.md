@@ -1,7 +1,7 @@
 # Problem 2
-🌀 Investigating the Dynamics of a Forced Damped Pendulum
+#🌀 Investigating the Dynamics of a Forced Damped Pendulum
 
-📌 Motivation
+#📌 Motivation
 The forced damped pendulum illustrates how the simple motion of a pendulum becomes drastically more complex when damping and external forcing are introduced. These interactions give rise to phenomena such as:
 
 #Resonance
