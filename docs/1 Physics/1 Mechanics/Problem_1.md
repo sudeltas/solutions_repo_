@@ -137,7 +137,7 @@ Introduce drag force: $F_d = -kv$ (linear) or $F_d = -kv^2$ (quadratic)
     </tr>
     <tr>
       <td>Constant gravity</td>
-      <td>Use variable $g(h)$ for high-altitude launches</td>
+      <td>Use variable &dollar;g(h)&dollar; for high-altitude launches</td>
     </tr>
     <tr>
       <td>Flat terrain</td>
@@ -149,6 +149,7 @@ Introduce drag force: $F_d = -kv$ (linear) or $F_d = -kv^2$ (quadratic)
     </tr>
   </tbody>
 </table>
+
 
 ✅ Conclusion
 
