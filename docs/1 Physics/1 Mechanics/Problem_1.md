@@ -1,16 +1,18 @@
 # Problem 1
-📘 Projectile Motion: Investigating Range as a Function of Angle
-🎯 1. Theoretical Background
+#📘 Projectile Motion: Investigating Range as a Function of Angle
+#🎯 1. Theoretical Background
+
 Projectile motion describes the motion of an object thrown into the air, subject only to gravitational acceleration.
 
-🧮 Equations of Motion
+#🧮 Equations of Motion
+
 The motion is broken into two components:
 
-Horizontal (x-axis)
+1.Horizontal (x-axis)
 
-Vertical (y-axis)
+2.Vertical (y-axis)
 
-Initial velocity components:
+#Initial velocity components:
 
 $v_{0x} = v_0 \cos(\theta)$
 
@@ -22,16 +24,25 @@ $x(t) = v_0 \cos(\theta) \cdot t$
 
 $y(t) = v_0 \sin(\theta) \cdot t - \frac{1}{2} g t^2$
 
-⏱️ Time of Flight
+#⏱️ Time of Flight
+
 For a projectile launched and landing at the same height:
+
 $T = \frac{2v_0 \sin(\theta)}{g}$
-📏 Horizontal Range
+
+#📏 Horizontal Range
+
 Using time of flight in the x-position:
+
 $R = v_{0x} \cdot T$
+
 $R = \frac{v_0^2 \sin(2\theta)}{g}$
+
 Range is maximum when $\theta = 45^\circ$ because $\sin(2\theta)$ is maximum at $90^\circ$.
-📊 2. Detailed Python Simulation
+
+#📊 2. Detailed Python Simulation
 💡 Objective
+
 Simulate and visualize how the range changes with projection angle. Also show effects of varying initial speed and gravity.
 
 ```Python
@@ -92,22 +103,27 @@ plt.show()
     </tr>
   </tbody>
 </table>
-🌐 4. Real-World Adaptations
-🏔 Uneven Terrain
+
+#🌐 4. Real-World Adaptations
+#🏔 Uneven Terrain
 If the launch and landing heights differ (e.g., launched from a cliff or building), the vertical motion equation becomes:
+
 $$
 y(t) = v_0 \sin(\theta)t - \frac{1}{2}gt^2
 $$
+
 $$
 y(t) = v_0 \sin(\theta)t - \frac{1}{2}gt^2
 $$
-💨 With Air Resistance
+
+#💨 With Air Resistance
 Introduce drag force: $F_d = -kv$ (linear) or $F_d = -kv^2$ (quadratic)
 
 Requires numerical methods (Euler, Runge-Kutta)
 
 Not analytically solvable in closed form
-🚧 6. Limitations & Future Improvements
+
+#🚧 6. Limitations & Future Improvements
 <table>
   <thead>
     <tr>
@@ -134,6 +150,7 @@ Not analytically solvable in closed form
     </tr>
   </tbody>
 </table>
+
 ✅ Conclusion
 Projectile motion is a powerful model that reveals deep physical insights using relatively simple mathematics. By changing angle, speed, and environment, we unlock a vast space of real-world applications — from sports to space science.
 
