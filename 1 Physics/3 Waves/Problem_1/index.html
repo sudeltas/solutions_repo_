@@ -66,22 +66,6 @@
 <ul class="current">
 <li class="toctree-l2 current"><a class="reference internal current" href="#">Problem 1</a>
 <ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="#mathematical-model">📐 Mathematical Model</a>
-<ul>
-<li class="toctree-l4"><a class="reference internal" href="#single-disturbance-equation">Single Disturbance Equation</a>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="#superposition-of-waves">Superposition of Waves</a>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="#superposition-of-waves_1">🌊 Superposition of Waves</a>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="#simulation-parameters">⚙️ Simulation Parameters</a>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="#observations-and-explanation">🔍 Observations and Explanation</a>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="#extensions">🧪 Extensions</a>
-</li>
-</ul>
-</li>
 </ul>
 </li>
 </ul>
@@ -188,13 +172,14 @@
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
 <h1 id="problem-1">Problem 1</h1>
-<p>🌊 Interference Patterns on a Water Surface
-Motivation
+<h1 id="interference-patterns-on-a-water-surface">🌊 Interference Patterns on a Water Surface</h1>
+<p>Motivation
 Interference occurs when waves from different sources overlap, creating new patterns. On a water surface, this is visible when ripples from different points meet, forming distinctive interference patterns. These can either reinforce each other (constructive interference) or cancel out (destructive interference).</p>
 <p>Studying these patterns deepens our understanding of wave behavior and is useful in physics, engineering, and real-world applications like acoustics and antenna design.</p>
-<p>Problem Statement
-Objective:
+<p>Problem Statement</p>
+<p>Objective:
 Analyze the interference patterns formed on a water surface due to the superposition of waves emitted from point sources located at the vertices of a regular polygon.</p>
+<hr/>
 <h2 id="mathematical-model">📐 Mathematical Model</h2>
 <h3 id="single-disturbance-equation">Single Disturbance Equation</h3>
 <p>A circular wave originating from a point source located at position <span class="arithmatex">\( \vec{r}_i = (x_i, y_i) \)</span> can be described by the following wave equation:</p>
@@ -233,6 +218,7 @@ u(\vec{r}, t) = \sum_{i=1}^{N} A \cdot \cos\left(k \cdot |\vec{r} - \vec{r}_i| -
 &amp;\text{Amplitude:} &amp;&amp; A = 1.0
 \end{aligned}
 \]</div>
+<hr/>
 <p>Python Code for Visualization</p>
 <pre><code class="language-python">import numpy as np
 import matplotlib.pyplot as plt
@@ -276,6 +262,7 @@ plt.grid(False)
 plt.show()
 </code></pre>
 <p><img alt="alt text" src="../image.png"/> </p>
+<hr/>
 <h3 id="observations-and-explanation">🔍 Observations and Explanation</h3>
 <ul>
 <li>
@@ -304,10 +291,12 @@ plt.show()
 <p>Modify the <strong>wavelength</strong> <span class="arithmatex">\( \lambda \)</span>, <strong>frequency</strong> <span class="arithmatex">\( f \)</span>, or introduce <strong>initial phase differences</strong> <span class="arithmatex">\( \phi_i \)</span> between sources to explore how these parameters influence the <strong>interference structure</strong>.</p>
 </li>
 </ul>
+<hr/>
 <p>📌 Wave Interference Model for 4-point Square</p>
 <p>📈 Contour Plot of the Interference Pattern</p>
 <p>📊 Line Plot at y = 0</p>
 <p>📋 Simulation Parameters Table</p>
+<hr/>
 <h1 id="required-libraries">📚 Required Libraries</h1>
 <pre><code class="language-python">import numpy as np
 import matplotlib.pyplot as plt
@@ -349,19 +338,33 @@ plt.colorbar(label="Displacement")
 plt.grid(False)
 plt.show()
 </code></pre>
-<p>![</p>
-<p>](image-1.png)</p>
-<h1 id="line-plot-along-y-0-horizontal-slice">📈 Line Plot Along y = 0 (Horizontal Slice)</h1>
-<p>y_index = np.argmin(np.abs(y - 0))  # Find closest y=0
+<p><img alt="alt text" src="../image-1.png"/></p>
+<pre><code class="language-python">import numpy as np
+import matplotlib.pyplot as plt
+
+# 1. Create a grid of points for x and y (as an example)
+# For simplicity, we'll create a grid from -10 to 10 in both x and y directions.
+x = np.linspace(-10, 10, 100)
+y = np.linspace(-10, 10, 100)
+
+# 2. Create a 2D displacement array (U) for demonstration purposes.
+# We'll create a simple example where the displacement is a function of x and y.
+X, Y = np.meshgrid(x, y)
+U = np.sin(X) * np.cos(Y)  # Example displacement field
+
+# 3. Find the index corresponding to y = 0
+y_index = np.argmin(np.abs(y - 0))  # Find closest y=0
+
+# 4. Create the plot
 plt.figure(figsize=(8, 4))
-plt.plot(x, U[y_index, :], color='crimson')
+plt.plot(x, U[y_index, :], color='crimson')  # Plot displacement along y = 0
 plt.title("📈 Displacement Profile Along y = 0", fontsize=14)
 plt.xlabel("x-axis")
 plt.ylabel("Displacement")
 plt.grid(True)
-plt.show()</p>
-<p>![</p>
-<p>](image-2.png)</p>
+plt.show()
+</code></pre>
+<p><img alt="alt text" src="../image-3.png"/></p>
 <h1 id="html-table-of-parameters">📋 HTML Table of Parameters</h1>
 <!DOCTYPE html>
 
