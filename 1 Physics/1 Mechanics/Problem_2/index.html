@@ -176,20 +176,20 @@
 <h1 id="motivation">📌 Motivation</h1>
 <p>The forced damped pendulum illustrates how the simple motion of a pendulum becomes drastically more complex when damping and external forcing are introduced. These interactions give rise to phenomena such as:</p>
 <h1 id="resonance">Resonance</h1>
-<h2 id="a-phenomenon-where-a-system-oscillates-at-maximum-amplitude-when-driven-at-its-natural-frequency">A phenomenon where a system oscillates at maximum amplitude when driven at its natural frequency.</h2>
+<p>A phenomenon where a system oscillates at maximum amplitude when driven at its natural frequency.</p>
 <h1 id="quasiperiodic-motion">Quasiperiodic Motion</h1>
-<h2 id="motion-that-results-from-the-combination-of-two-or-more-incommensurate-frequencies-leading-to-a-complex-but-non-chaotic-behavior">Motion that results from the combination of two or more incommensurate frequencies, leading to a complex but non-chaotic behavior.</h2>
+<p>Motion that results from the combination of two or more incommensurate frequencies, leading to a complex but non-chaotic behavior.</p>
 <h1 id="chaos">Chaos</h1>
-<h2 id="a-state-of-unpredictable-irregular-motion-that-occurs-when-a-system-is-highly-sensitive-to-initial-conditions-often-seen-when-driving-forces-are-close-to-resonant-frequencies">A state of unpredictable, irregular motion that occurs when a system is highly sensitive to initial conditions, often seen when driving forces are close to resonant frequencies.</h2>
+<p>A state of unpredictable, irregular motion that occurs when a system is highly sensitive to initial conditions, often seen when driving forces are close to resonant frequencies.</p>
 <h1 id="applications-of-this-model-span">Applications of this model span:</h1>
 <p>Climate Systems: Understanding complex cycles and feedback loops within climate dynamics.</p>
-<h2 id="oscillating-circuits-used-in-electrical-engineering-particularly-in-resonance-circuits">Oscillating Circuits: Used in electrical engineering, particularly in resonance circuits.</h2>
-<h2 id="energy-harvesting-devices-like-piezoelectric-generators-where-oscillating-systems-harvest-energy-from-environmental-vibrations">Energy Harvesting: Devices like piezoelectric generators, where oscillating systems harvest energy from environmental vibrations.</h2>
-<h2 id="structural-dynamics-studying-vibrations-and-oscillations-in-structures-such-as-bridges-buildings-and-mechanical-systems">Structural Dynamics: Studying vibrations and oscillations in structures such as bridges, buildings, and mechanical systems.</h2>
+<p>Oscillating Circuits: Used in electrical engineering, particularly in resonance circuits.</p>
+<p>Energy Harvesting: Devices like piezoelectric generators, where oscillating systems harvest energy from environmental vibrations.</p>
+<p>Structural Dynamics: Studying vibrations and oscillations in structures such as bridges, buildings, and mechanical systems.</p>
 <hr/>
-<p>🧠 1. Theoretical Foundation</p>
-<p>🔧 Governing Equation
-The equation of motion for a forced, damped pendulum is:
+<h1 id="1-theoretical-foundation">🧠 1. Theoretical Foundation</h1>
+<h1 id="governing-equation">🔧 Governing Equation</h1>
+<p>The equation of motion for a forced, damped pendulum is:
 $$
 \frac{d^2\theta}{dt^2} + \gamma \frac{d\theta}{dt} + \omega_0^2 \sin(\theta) = A \cos(\omega t)
 $$
@@ -199,7 +199,7 @@ Where:</p>
 <p><span class="arithmatex">\(\omega_0\)</span>: Natural frequency <span class="arithmatex">\((\omega_0 = \sqrt{g/L})\)</span></p>
 <p><span class="arithmatex">\(A\)</span>: Amplitude of the driving force</p>
 <p><span class="arithmatex">\(\omega\)</span>: Driving frequency</p>
-<p>✅ Small-Angle Approximation</p>
+<h1 id="small-angle-approximation">✅ Small-Angle Approximation</h1>
 <p>If <span class="arithmatex">\(\theta\)</span> is small:
 $$
 \sin(\theta) \approx \theta
@@ -209,7 +209,7 @@ $$</p>
 $$
 This is a linear second-order differential equation solvable using standard methods (e.g., undetermined coefficients).</p>
 <hr/>
-<p>📊 2. Analysis of Dynamics</p>
+<h1 id="2-analysis-of-dynamics">📊 2. Analysis of Dynamics</h1>
 <p>🔁 Parameter Influence</p>
 <table>
 <thead>
@@ -238,12 +238,12 @@ This is a linear second-order differential equation solvable using standard meth
 </tbody>
 </table>
 <hr/>
-<p>🔄 Regular vs. Chaotic Motion
-At low forcing: periodic or quasiperiodic motion</p>
+<h1 id="regular-vs-chaotic-motion">🔄 Regular vs. Chaotic Motion</h1>
+<p>At low forcing: periodic or quasiperiodic motion</p>
 <p>At certain parameter ranges: chaotic behavior, sensitive to initial conditions</p>
 <p>Visual tools: Phase space, Poincaré sections, Bifurcation diagrams</p>
-<p>🌍 3. Practical Applications
-The forced damped pendulum model applies to many real systems:</p>
+<h1 id="3-practical-applications">🌍 3. Practical Applications</h1>
+<p>The forced damped pendulum model applies to many real systems:</p>
 <table>
 <thead>
 <tr>
@@ -271,7 +271,7 @@ The forced damped pendulum model applies to many real systems:</p>
 </tbody>
 </table>
 <hr/>
-<p>🐍 Python Code</p>
+<h1 id="python-code">🐍 Python Code</h1>
 <pre><code class="language-Python">import numpy as np
 import matplotlib.pyplot as plt
 
@@ -319,7 +319,7 @@ plt.show()
 </code></pre>
 <p><img alt="alt text" src="../image-2.png"/> </p>
 <hr/>
-<p>⚠️ Limitations and Extensions</p>
+<h1 id="limitations-and-extensions">⚠️ Limitations and Extensions</h1>
 <table>
 <thead>
 <tr>
