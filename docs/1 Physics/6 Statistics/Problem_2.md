@@ -214,12 +214,14 @@ print(f"Estimated Pi (Buffon's Needle): {pi_estimate_buffon}")
    \[
    x^2 + y^2 \leq 1
    \]
+   where \( x \) and \( y \) are the coordinates of the points.
 
 3. **Pi Estimation:**
    - Using the ratio of points inside the circle to the total number of points, we estimate \( \pi \) using the formula:
    \[
    \pi \approx 4 \times \frac{\text{Points Inside Circle}}{\text{Total Points}}
    \]
+   This formula works because the ratio of points inside the circle to the total number of points inside the square approximates the area of the circle relative to the square, and the area of the circle is \( \pi \times r^2 \), where \( r = 1 \).
 
 #### Buffon’s Needle Method:
 
@@ -227,8 +229,12 @@ print(f"Estimated Pi (Buffon's Needle): {pi_estimate_buffon}")
    - We simulate dropping a needle of length \( L \) onto a plane with parallel lines spaced \( d \) units apart.
 
 2. **Crossing Detection:**
-   - For each needle drop, we randomly select an angle \( \theta \) of the needle and calculate the distance from the center of the needle to the nearest line.
-   - If the needle crosses a line, we count that as a crossing.
+   - For each needle drop, we randomly select an angle \( \theta \) of the needle with respect to the parallel lines (ranging from 0 to \( \frac{\pi}{2} \)).
+   - We also randomly choose the distance \( x \) from the center of the needle to the nearest line. The needle crosses a line if:
+   \[
+   x \leq \frac{L}{2} \sin(\theta)
+   \]
+   where \( \theta \) is the angle and \( x \) is the distance from the center of the needle to the closest line.
 
 3. **Pi Estimation:**
    - The estimate for \( \pi \) is then given by the formula:
@@ -240,6 +246,9 @@ print(f"Estimated Pi (Buffon's Needle): {pi_estimate_buffon}")
    - \( d \) is the distance between parallel lines,
    - \( N_{\text{drops}} \) is the number of needle drops, and
    - \( N_{\text{crossings}} \) is the number of times the needle crosses a line.
+
+The key idea behind Buffon’s Needle is that the probability of a needle crossing a line is proportional to \( \frac{2L}{d\pi} \), and by performing many needle drops, we can estimate \( \pi \) based on the number of crossings.
+
 
 #### Visualization:
 
