@@ -1,9 +1,8 @@
 # Problem 1
-Simulating the Effects of the Lorentz Force ⚡
-Motivation:
-The Lorentz force describes the force experienced by a charged particle due to the presence of electric and magnetic fields.
+#Simulating the Effects of the Lorentz Force ⚡
 
-The Lorentz force is given by the equation:
+#Motivation:
+The Lorentz force describes the force experienced by a charged particle due to the presence of electric and magnetic fields.
 
 The Lorentz force is given by the equation:
 
@@ -20,6 +19,8 @@ Where:
 
 This force governs the motion of charged particles in fields, and it plays a central role in many applications, such as plasma physics, particle accelerators, and astrophysics. Simulating this force helps to visualize and understand the complex trajectories of particles under various field conditions.
 
+---
+
 #1. Exploration of Applications
 The Lorentz force is essential in various practical systems. Some notable applications include:
 
@@ -30,6 +31,8 @@ Mass Spectrometers: The Lorentz force helps in separating ions based on their ma
 Plasma Confinement: Magnetic fields are used in fusion reactors like Tokamaks to confine plasma.
 
 In these systems, both electric and magnetic fields are used to control the motion of charged particles. The electric field accelerates the particles, while the magnetic field bends their paths, often resulting in circular or spiral motion.
+
+---
 
 #2. Simulating Particle Motion
 We will simulate the trajectory of a charged particle under various field configurations. The following scenarios will be explored:
