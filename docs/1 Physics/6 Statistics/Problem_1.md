@@ -20,9 +20,13 @@ The Central Limit Theorem can be mathematically expressed as follows:
 \]
 
 Where:
+
 - \( X_1, X_2, \dots, X_n \) are independent and identically distributed (i.i.d.) random variables with mean \( \mu \) and variance \( \sigma^2 \).
+
 - \( \bar{X}_n \) is the sample mean based on a sample of size \( n \).
+
 - As the sample size \( n \) grows, the distribution of the normalized sample mean \( \frac{\bar{X}_n - \mu}{\sigma / \sqrt{n}} \) converges in distribution to the standard normal distribution \( \mathcal{N}(0, 1) \).
+
 ### Expected Value and Variance of Sample Mean
 
 The expected value and variance of the sample mean are key to understanding the behavior of \( \bar{X}_n \):
