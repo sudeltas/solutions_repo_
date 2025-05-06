@@ -99,11 +99,11 @@ This is a linear second-order differential equation solvable using standard meth
 ---
 
 #🔄 Regular vs. Chaotic Motion
-At low forcing: periodic or quasiperiodic motion
+○ At low forcing: periodic or quasiperiodic motion
 
-At certain parameter ranges: chaotic behavior, sensitive to initial conditions
+○ At certain parameter ranges: chaotic behavior, sensitive to initial conditions
 
-Visual tools: Phase space, Poincaré sections, Bifurcation diagrams
+○ Visual tools: Phase space, Poincaré sections, Bifurcation diagrams
 
 ---
 
@@ -222,4 +222,4 @@ plt.show()
 ---
 
 #Conclusion:
-The forced damped pendulum model offers valuable insights into the behavior of oscillating systems, ranging from simple harmonic motion to chaotic dynamics. By studying phenomena such as resonance, quasiperiodic motion, and chaos, this model provides a framework for understanding complex real-world systems. Its applications span various fields, including climate systems, oscillating circuits, energy harvesting, and structural dynamics, making it a versatile tool for both theoretical analysis and practical engineering solutions.
+○ The forced damped pendulum model offers valuable insights into the behavior of oscillating systems, ranging from simple harmonic motion to chaotic dynamics. By studying phenomena such as resonance, quasiperiodic motion, and chaos, this model provides a framework for understanding complex real-world systems. Its applications span various fields, including climate systems, oscillating circuits, energy harvesting, and structural dynamics, making it a versatile tool for both theoretical analysis and practical engineering solutions.
