@@ -81,7 +81,7 @@ Where:
 
 We can calculate the first, second, and third cosmic velocities for celestial bodies like Earth, Mars, and Jupiter. Below are their key values:
 
--<h3>Earth</h3>
+<h3>Earth</h3>
 <ul>
   <li><strong>Mass</strong> (M<sub>earth</sub>): 5.972 × 10<sup>24</sup> kg</li>
   <li><strong>Radius</strong> (r<sub>earth</sub>): 6.371 × 10<sup>6</sup> m</li>
