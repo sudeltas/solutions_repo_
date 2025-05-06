@@ -206,22 +206,23 @@ print(f"Estimated Pi (Buffon's Needle): {pi_estimate_buffon}")
 #### Circle-based Monte Carlo Method:
 
 1. **Random Point Generation:**
-   - We randomly generate points inside a square that bounds a unit circle.
-   - The square is defined by the coordinates \( x \) and \( y \) in the range \([-1, 1]\), and the unit circle is centered at the origin with a radius of 1.
+   - We generate random points inside a square that bounds a unit circle.
+   - The square is defined by coordinates \( x \) and \( y \) in the range \([-1, 1]\), and the unit circle is centered at the origin with a radius of 1.
 
-2. **Point Inside Circle Check:**
-   - We calculate how many points fall inside the unit circle by checking the condition:
+2. **Checking if a Point is Inside the Circle:**
+   - To check whether a point is inside the unit circle, we verify if it satisfies the equation:
    \[
    x^2 + y^2 \leq 1
    \]
-   where \( x \) and \( y \) are the coordinates of the points.
+   where \( x \) and \( y \) are the coordinates of the point.
 
 3. **Pi Estimation:**
-   - Using the ratio of points inside the circle to the total number of points, we estimate \( \pi \) using the formula:
+   - The value of \( \pi \) is estimated by the ratio of points that fall inside the circle to the total number of points. This ratio is multiplied by 4 to account for the area of the square, resulting in the formula:
    \[
    \pi \approx 4 \times \frac{\text{Points Inside Circle}}{\text{Total Points}}
    \]
-   This formula works because the ratio of points inside the circle to the total number of points inside the square approximates the area of the circle relative to the square, and the area of the circle is \( \pi \times r^2 \), where \( r = 1 \).
+   This formula works because the ratio of points inside the circle to the total number of points approximates the ratio of the areas of the circle and the square. Since the area of a unit circle is \( \pi \times r^2 \) (where \( r = 1 \)), and the area of the square is \( 4 \), the ratio gives an estimate for \( \pi \).
+
 
 #### Buffon’s Needle Method:
 
