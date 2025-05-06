@@ -5,28 +5,28 @@
 The forced damped pendulum illustrates how the simple motion of a pendulum becomes drastically more complex when damping and external forcing are introduced. These interactions give rise to phenomena such as:
 
 #Resonance
-##A phenomenon where a system oscillates at maximum amplitude when driven at its natural frequency.
+A phenomenon where a system oscillates at maximum amplitude when driven at its natural frequency.
 
 #Quasiperiodic Motion
-##Motion that results from the combination of two or more incommensurate frequencies, leading to a complex but non-chaotic behavior.
+Motion that results from the combination of two or more incommensurate frequencies, leading to a complex but non-chaotic behavior.
 
 #Chaos
-##A state of unpredictable, irregular motion that occurs when a system is highly sensitive to initial conditions, often seen when driving forces are close to resonant frequencies.
+A state of unpredictable, irregular motion that occurs when a system is highly sensitive to initial conditions, often seen when driving forces are close to resonant frequencies.
 
 #Applications of this model span:
 Climate Systems: Understanding complex cycles and feedback loops within climate dynamics.
 
-##Oscillating Circuits: Used in electrical engineering, particularly in resonance circuits.
+Oscillating Circuits: Used in electrical engineering, particularly in resonance circuits.
 
-##Energy Harvesting: Devices like piezoelectric generators, where oscillating systems harvest energy from environmental vibrations.
+Energy Harvesting: Devices like piezoelectric generators, where oscillating systems harvest energy from environmental vibrations.
 
-##Structural Dynamics: Studying vibrations and oscillations in structures such as bridges, buildings, and mechanical systems.
+Structural Dynamics: Studying vibrations and oscillations in structures such as bridges, buildings, and mechanical systems.
 
 ---
 
-🧠 1. Theoretical Foundation
+#🧠 1. Theoretical Foundation
 
-🔧 Governing Equation
+#🔧 Governing Equation
 The equation of motion for a forced, damped pendulum is:
 $$
 \frac{d^2\theta}{dt^2} + \gamma \frac{d\theta}{dt} + \omega_0^2 \sin(\theta) = A \cos(\omega t)
@@ -43,7 +43,7 @@ $A$: Amplitude of the driving force
 
 $\omega$: Driving frequency
 
-✅ Small-Angle Approximation
+#✅ Small-Angle Approximation
 
 If $\theta$ is small:
 $$
@@ -57,7 +57,7 @@ This is a linear second-order differential equation solvable using standard meth
 
 ---
 
-📊 2. Analysis of Dynamics
+#📊 2. Analysis of Dynamics
 
 🔁 Parameter Influence
 <table>
@@ -88,14 +88,14 @@ This is a linear second-order differential equation solvable using standard meth
 </table>
 ---
 
-🔄 Regular vs. Chaotic Motion
+#🔄 Regular vs. Chaotic Motion
 At low forcing: periodic or quasiperiodic motion
 
 At certain parameter ranges: chaotic behavior, sensitive to initial conditions
 
 Visual tools: Phase space, Poincaré sections, Bifurcation diagrams
 
-🌍 3. Practical Applications
+#🌍 3. Practical Applications
 The forced damped pendulum model applies to many real systems:
 <table>
   <thead>
@@ -127,7 +127,7 @@ The forced damped pendulum model applies to many real systems:
 ---
 
 
-🐍 Python Code
+#🐍 Python Code
 
 ```Python
 import numpy as np
@@ -179,7 +179,7 @@ plt.show()
 
 ---
 
-⚠️ Limitations and Extensions
+#⚠️ Limitations and Extensions
 <table>
   <thead>
     <tr>
