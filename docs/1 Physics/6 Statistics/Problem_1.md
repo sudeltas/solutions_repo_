@@ -137,6 +137,8 @@ Financial modeling: Estimate expected returns from historical data.
 
 Medical studies: Determine treatment effectiveness based on sample averages.
 
+
+#📋 HTML Table of Population Statistics
 <table border="1">
   <tr>
     <th>Distribution</th>
