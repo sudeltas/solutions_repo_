@@ -189,11 +189,19 @@ plt.show()
 
 In this scenario:
 
-The electric field is along the x-axis, and the magnetic field is along the y-axis.
+- The **electric field** \( \mathbf{E} \) is along the **x-axis**:  
+  \[
+  \mathbf{E} = E_x \hat{i}
+  \]
 
-The particle experiences a more complex path due to the crossed fields.
+- The **magnetic field** \( \mathbf{B} \) is along the **y-axis**:  
+  \[
+  \mathbf{B} = B_y \hat{j}
+  \]
 
-This leads to a spiral motion in the combined electric and magnetic fields.
+The particle experiences a more complex path due to the **crossed fields**.
+
+This leads to a **spiral motion** in the combined electric and magnetic fields.
 
 ---
 
@@ -211,12 +219,6 @@ In each of the above simulations, you can explore how varying parameters such as
 
 - **Mass (\(m\))**: The mass of the particle affects its inertia, with a larger mass resulting in slower motion for the same force. A heavier particle will move more slowly through the fields compared to a lighter particle.
 
-Effect the trajectory of the particle. For instance:
-
-Increasing the magnetic field strength will decrease the radius of the particle's circular motion (Larmor radius).
-
-Increasing the electric field strength will change the drift velocity and trajectory shape.
-
 ---
 
 #4. Visualization
@@ -228,16 +230,6 @@ Drift velocity: The velocity component along the direction of the electric field
 
 ---
 
-Deliverables
-The deliverables include:
-
-Python scripts for simulating particle motion in various field configurations.
-
-Visualizations of particle trajectories for different field setups.
-
-A discussion on how these results relate to practical systems, such as cyclotrons and magnetic traps used in plasma confinement.
-
----
 
 #HTML Table Example for Simulated Parameters
 If you need to display parameter values in a structured table (HTML format), here's an example of how you can present the results:
