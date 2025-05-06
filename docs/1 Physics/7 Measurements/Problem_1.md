@@ -257,6 +257,74 @@ for result in results:
     print(f"Uncertainty in g (delta_g): {result['delta_g']:.4f} m/s²")
     print("-" * 40)
 ```
+#Print Results
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Measurement Results</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 8px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <h1>Gravitational Acceleration Measurement Results</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Measurement #</th>
+                <th>\( T_{\text{10}} \) (seconds)</th>
+                <th>\( \bar{T_{\text{10}}} \) (seconds)</th>
+                <th>\( \sigma_{\text{T_{\text{10}}}} \) (seconds)</th>
+                <th>\( \Delta \bar{T_{\text{10}}} \) (seconds)</th>
+                <th>\( L \) (meters)</th>
+                <th>\( T \) (seconds)</th>
+                <th>\( g \) (m/s\(^2\))</th>
+                <th>\( \Delta g \) (m/s\(^2\))</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>20.1</td>
+                <td>20.1</td>
+                <td>—</td>
+                <td>—</td>
+                <td>1.5</td>
+                <td>2.010</td>
+                <td>14.6575</td>
+                <td>1.4593</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>19.8</td>
+                <td>19.8</td>
+                <td>—</td>
+                <td>—</td>
+                <td>1.5</td>
+                <td>1.98</td>
+                <td>15.1050</td>
+                <td>1.5266</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
 
 <table border="1">
     <thead>
