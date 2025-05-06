@@ -287,13 +287,15 @@ R_{\text{eq}} = \frac{1}{0.3833} \approx 2.61 \, \Omega
 \]</div>
 <hr/>
 <h4 id="example-2-simple-parallel-circuit_1"><strong>Example 2: Simple Parallel Circuit</strong></h4>
-<p>Consider a parallel circuit:
-      ---[R1]---+---[R2]---
-                  |
-                  |
-                 [R3]
-                  |
-                 ---</p>
+<p>Consider a parallel circuit:</p>
+<pre><code>---[R1]---
+</code></pre>
+<p>|          |
+   |         [R2]
+   |          |
+   |         [R3]
+   |          |</p>
+<hr/>
 <pre><code class="language-python">import numpy as np
 import matplotlib.pyplot as plt
 # Function to calculate equivalent resistance in series
