@@ -102,7 +102,8 @@ plt.show()
 ```
 ![alt text](image-1.png)
 
-Example 1: Escape and Orbital Velocities of Planets
+#Example 1: Escape and Orbital Velocities of Planets
+
 Explanation: This table compares the escape and orbital (first cosmic) velocities for Earth, Mars, and Jupiter. These values are critical for satellite launches and interplanetary missions.
 <table border="1">
   <thead>
@@ -139,7 +140,8 @@ Explanation: This table compares the escape and orbital (first cosmic) velocitie
   </tbody>
 </table>
 
- Example 2: Orbit Type Based on Initial Velocity
+# Example 2: Orbit Type Based on Initial Velocity
+
 Explanation: The following table shows how different initial velocities determine the type of orbit for a payload released near Earth.
 <table border="1">
   <thead>
@@ -177,7 +179,8 @@ Explanation: The following table shows how different initial velocities determin
     </tr>
   </tbody>
 </table>
-Example 3: Required Speeds for Orbital Insertion
+#Example 3: Required Speeds for Orbital Insertion
+
 Explanation: This table compares the orbital and escape velocities required at a constant launch altitude for various planets.
 <table border="1">
   <thead>
