@@ -115,3 +115,26 @@ plt.grid(True)
 plt.legend()
 plt.show()
 ```
+![alt text](image.png)
+### Explanation:
+**Kepler's Third Law:** We use the derived formula
+
+\[
+T^2 = \frac{4 \pi^2 r^3}{G M}
+\]
+
+to compute the orbital period.
+
+**Plot:** The graph shows how the orbital period increases with the cube of the orbital radius, confirming Kepler's Third Law.
+
+### Extension to Elliptical Orbits:
+Kepler's Third Law is also valid for elliptical orbits, but the relationship between the orbital period and the orbital radius must be considered in terms of the semi-major axis of the ellipse. For elliptical orbits, the law can be written as:
+
+\[
+T^2 \propto a^3
+\]
+
+Where \(a\) is the semi-major axis of the ellipse, which is the average of the closest and farthest distances from the central body.
+
+### Conclusion:
+Kepler's Third Law provides a powerful tool for understanding the motion of celestial bodies. By relating the orbital period to the cube of the orbital radius, we can predict planetary positions, calculate planetary masses, and study gravitational interactions. This law is essential for both theoretical and practical applications in astronomy, satellite communications, and space exploration.
