@@ -1,13 +1,18 @@
 # Problem 1
-🌊 Interference Patterns on a Water Surface
+#🌊 Interference Patterns on a Water Surface
+
 Motivation
 Interference occurs when waves from different sources overlap, creating new patterns. On a water surface, this is visible when ripples from different points meet, forming distinctive interference patterns. These can either reinforce each other (constructive interference) or cancel out (destructive interference).
 
 Studying these patterns deepens our understanding of wave behavior and is useful in physics, engineering, and real-world applications like acoustics and antenna design.
 
 Problem Statement
+
 Objective:
 Analyze the interference patterns formed on a water surface due to the superposition of waves emitted from point sources located at the vertices of a regular polygon.
+
+---
+
 ## 📐 Mathematical Model
 
 ### Single Disturbance Equation
@@ -59,6 +64,8 @@ Where:
 \end{aligned}
 \]
 
+---
+
 Python Code for Visualization
 
 ```python
@@ -105,6 +112,8 @@ plt.show()
 ```
 ![alt text](image.png) 
 
+---
+
 ### 🔍 Observations and Explanation
 
 - **Constructive interference** occurs where wave crests (or troughs) from all sources meet **in phase**, leading to **amplified displacements**.
@@ -125,6 +134,8 @@ plt.show()
 
 - Modify the **wavelength** \( \lambda \), **frequency** \( f \), or introduce **initial phase differences** \( \phi_i \) between sources to explore how these parameters influence the **interference structure**.
 
+---
+
 📌 Wave Interference Model for 4-point Square
 
 📈 Contour Plot of the Interference Pattern
@@ -132,6 +143,8 @@ plt.show()
 📊 Line Plot at y = 0
 
 📋 Simulation Parameters Table
+
+---
 
 # 📚 Required Libraries
 ```python
@@ -175,22 +188,36 @@ plt.colorbar(label="Displacement")
 plt.grid(False)
 plt.show()
 ```
-![
-    
-](image-1.png)
-# 📈 Line Plot Along y = 0 (Horizontal Slice)
+![alt text](image-1.png)
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+
+# 1. Create a grid of points for x and y (as an example)
+# For simplicity, we'll create a grid from -10 to 10 in both x and y directions.
+x = np.linspace(-10, 10, 100)
+y = np.linspace(-10, 10, 100)
+
+# 2. Create a 2D displacement array (U) for demonstration purposes.
+# We'll create a simple example where the displacement is a function of x and y.
+X, Y = np.meshgrid(x, y)
+U = np.sin(X) * np.cos(Y)  # Example displacement field
+
+# 3. Find the index corresponding to y = 0
 y_index = np.argmin(np.abs(y - 0))  # Find closest y=0
+
+# 4. Create the plot
 plt.figure(figsize=(8, 4))
-plt.plot(x, U[y_index, :], color='crimson')
+plt.plot(x, U[y_index, :], color='crimson')  # Plot displacement along y = 0
 plt.title("📈 Displacement Profile Along y = 0", fontsize=14)
 plt.xlabel("x-axis")
 plt.ylabel("Displacement")
 plt.grid(True)
 plt.show()
+```
+![alt text](image-3.png)
 
-![
-    
-](image-2.png)
 # 📋 HTML Table of Parameters
 <!DOCTYPE html>
 <html lang="en">
