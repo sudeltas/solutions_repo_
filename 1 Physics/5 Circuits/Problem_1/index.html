@@ -181,44 +181,40 @@
 </ul>
 <p>we can simplify even the most intricate circuits step by step. This method is particularly useful for circuit simulation software and optimization problems. It also highlights the connection between electrical circuits and mathematical concepts like graph theory.</p>
 <hr/>
-<h2 id="task-description">Task Description</h2>
-<h3 id="option-1-simplified-algorithm-description">Option 1: Simplified Algorithm Description</h3>
-<h4 id="steps-for-calculating-equivalent-resistance-using-graph-theory">Steps for Calculating Equivalent Resistance Using Graph Theory</h4>
-<ol>
-<li><strong>Graph Representation</strong>:</li>
-<li>
-<p>Represent the circuit as a graph <span class="arithmatex">\( G = (V, E) \)</span>, where:</p>
+<h2 id="task-description-option-1-simplified-algorithm-description">Task Description: Option 1 - Simplified Algorithm Description</h2>
+<h3 id="steps-for-calculating-equivalent-resistance-using-graph-theory">Steps for Calculating Equivalent Resistance Using Graph Theory</h3>
+<h4 id="1-graph-representation">1. Graph Representation:</h4>
 <ul>
+<li>Represent the circuit as a graph <span class="arithmatex">\( G = (V, E) \)</span>, where:</li>
 <li><span class="arithmatex">\( V \)</span> are the vertices (junctions),</li>
-<li><span class="arithmatex">\( E \)</span> are the edges (resistors), each with a resistance value <span class="arithmatex">\( R_{ij} \)</span>.</li>
+<li><span class="arithmatex">\( E \)</span> are the edges (resistors), each with a resistance value <span class="arithmatex">\( R \)</span>.</li>
 </ul>
-</li>
-<li>
-<p><strong>Identifying Series and Parallel Connections</strong>:</p>
-</li>
-<li><strong>Series Connection</strong>: When resistors are in series, the total resistance is given by:
-     [
-     R_{\text{eq}} = R_1 + R_2 + \dots + R_n
-     ]</li>
-<li>
-<p><strong>Parallel Connection</strong>: When resistors are in parallel, the total resistance is:
-     [
-     \frac{1}{R_{\text{eq}}} = \frac{1}{R_1} + \frac{1}{R_2} + \dots + \frac{1}{R_n}
-     ]</p>
-</li>
-<li>
-<p><strong>Iterative Reduction</strong>:</p>
-</li>
-<li>Identify series and parallel resistor connections in the graph.</li>
-<li>Replace series resistors with their equivalent resistance and remove parallel resistors, simplifying the graph.</li>
-<li>
-<p>Repeat until the graph is reduced to a single equivalent resistance.</p>
-</li>
-<li>
-<p><strong>Handling Nested Configurations</strong>:</p>
-</li>
+<h4 id="2-identifying-series-and-parallel-connections">2. Identifying Series and Parallel Connections:</h4>
+<ul>
+<li><strong>Series Connection</strong>: When resistors are in series, the total resistance <span class="arithmatex">\( R_{\text{eq}} \)</span> is given by:</li>
+</ul>
+<p>[
+  R_{\text{eq}} = R_1 + R_2 + \dots + R_n
+  ]</p>
+<ul>
+<li><strong>Parallel Connection</strong>: When resistors are in parallel, the total resistance <span class="arithmatex">\( R_{\text{eq}} \)</span> is given by:</li>
+</ul>
+<p>[
+  \frac{1}{R_{\text{eq}}} = \frac{1}{R_1} + \frac{1}{R_2} + \dots + \frac{1}{R_n}
+  ]</p>
+<h4 id="3-iterative-reduction">3. Iterative Reduction:</h4>
+<ul>
+<li><strong>Step 1</strong>: Identify series and parallel resistor connections in the graph.</li>
+<li><strong>Step 2</strong>: Replace series resistors with their equivalent resistance, and remove parallel resistors, simplifying the graph.</li>
+<li><strong>Step 3</strong>: Repeat this process until the graph is reduced to a single equivalent resistance.</li>
+</ul>
+<h4 id="4-handling-nested-configurations">4. Handling Nested Configurations:</h4>
+<ul>
 <li>In cases of nested series or parallel resistors, apply the reduction rules recursively to simplify the subgraphs.</li>
-</ol>
+<li>For nested series resistors, sum their resistances.</li>
+<li>For nested parallel resistors, use the reciprocal formula to calculate the combined resistance.</li>
+</ul>
+<p>By applying these steps iteratively, we can simplify complex circuits to find the total equivalent resistance.</p>
 <hr/>
 <h3 id="example-of-series-and-parallel-combinations">Example of Series and Parallel Combinations</h3>
 <h4 id="example-1-simple-series-circuit"><strong>Example 1: Simple Series Circuit</strong></h4>
