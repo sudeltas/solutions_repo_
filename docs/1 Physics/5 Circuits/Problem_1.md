@@ -13,34 +13,42 @@ we can simplify even the most intricate circuits step by step. This method is pa
 
 ---
 
-## Task Description
+## Task Description: Option 1 - Simplified Algorithm Description
 
-### Option 1: Simplified Algorithm Description
+### Steps for Calculating Equivalent Resistance Using Graph Theory
 
-#### Steps for Calculating Equivalent Resistance Using Graph Theory
+#### 1. Graph Representation:
+- Represent the circuit as a graph \( G = (V, E) \), where:
+  - \( V \) are the vertices (junctions),
+  - \( E \) are the edges (resistors), each with a resistance value \( R \).
 
-1. **Graph Representation**:
-   - Represent the circuit as a graph \( G = (V, E) \), where:
-     - \( V \) are the vertices (junctions),
-     - \( E \) are the edges (resistors), each with a resistance value \( R_{ij} \).
+#### 2. Identifying Series and Parallel Connections:
 
-2. **Identifying Series and Parallel Connections**:
-   - **Series Connection**: When resistors are in series, the total resistance is given by:
-     \[
-     R_{\text{eq}} = R_1 + R_2 + \dots + R_n
-     \]
-   - **Parallel Connection**: When resistors are in parallel, the total resistance is:
-     \[
-     \frac{1}{R_{\text{eq}}} = \frac{1}{R_1} + \frac{1}{R_2} + \dots + \frac{1}{R_n}
-     \]
+- **Series Connection**: When resistors are in series, the total resistance \( R_{\text{eq}} \) is given by:
+  
+  \[
+  R_{\text{eq}} = R_1 + R_2 + \dots + R_n
+  \]
 
-3. **Iterative Reduction**:
-   - Identify series and parallel resistor connections in the graph.
-   - Replace series resistors with their equivalent resistance and remove parallel resistors, simplifying the graph.
-   - Repeat until the graph is reduced to a single equivalent resistance.
+- **Parallel Connection**: When resistors are in parallel, the total resistance \( R_{\text{eq}} \) is given by:
+  
+  \[
+  \frac{1}{R_{\text{eq}}} = \frac{1}{R_1} + \frac{1}{R_2} + \dots + \frac{1}{R_n}
+  \]
 
-4. **Handling Nested Configurations**:
-   - In cases of nested series or parallel resistors, apply the reduction rules recursively to simplify the subgraphs.
+#### 3. Iterative Reduction:
+
+- **Step 1**: Identify series and parallel resistor connections in the graph.
+- **Step 2**: Replace series resistors with their equivalent resistance, and remove parallel resistors, simplifying the graph.
+- **Step 3**: Repeat this process until the graph is reduced to a single equivalent resistance.
+
+#### 4. Handling Nested Configurations:
+
+- In cases of nested series or parallel resistors, apply the reduction rules recursively to simplify the subgraphs.
+  - For nested series resistors, sum their resistances.
+  - For nested parallel resistors, use the reciprocal formula to calculate the combined resistance.
+  
+By applying these steps iteratively, we can simplify complex circuits to find the total equivalent resistance.
 
 ---
 
