@@ -1,12 +1,13 @@
 # Problem 1
 #🌊 Interference Patterns on a Water Surface
 
-Motivation
+#Motivation
+
 Interference occurs when waves from different sources overlap, creating new patterns. On a water surface, this is visible when ripples from different points meet, forming distinctive interference patterns. These can either reinforce each other (constructive interference) or cancel out (destructive interference).
 
 Studying these patterns deepens our understanding of wave behavior and is useful in physics, engineering, and real-world applications like acoustics and antenna design.
 
-Problem Statement
+#Problem Statement
 
 Objective:
 Analyze the interference patterns formed on a water surface due to the superposition of waves emitted from point sources located at the vertices of a regular polygon.
