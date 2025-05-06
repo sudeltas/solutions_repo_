@@ -177,8 +177,6 @@ These velocities play a central role in space exploration, from launching satell
 - Python code to compute and visualize the escape velocities and orbital velocities for different celestial bodies.
 - Graphical representation showing how the escape velocity and orbital velocity vary for Earth, Mars, and Jupiter.
 
-This document provides the complete overview of the task and the necessary computations to better understand these velocities in space exploration.
-
 ### "Escape and Cosmic Velocities for Various Celestial Bodies"
 <table>
   <thead>
