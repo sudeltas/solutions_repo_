@@ -50,7 +50,9 @@ g = \frac{4\pi^2 L}{T^2}
 \]
 
 where:
+
 - \( L \) is the length of the pendulum,
+
 - \( T \) is the period of oscillation.
 
 ### 3. Propagate Uncertainties:
