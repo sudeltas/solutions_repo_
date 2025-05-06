@@ -66,6 +66,22 @@
 <ul class="current">
 <li class="toctree-l2 current"><a class="reference internal current" href="#">Problem 1</a>
 <ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="#mathematical-model">📐 Mathematical Model</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#single-disturbance-equation">Single Disturbance Equation</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#superposition-of-waves">Superposition of Waves</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#superposition-of-waves_1">🌊 Superposition of Waves</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#simulation-parameters">⚙️ Simulation Parameters</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#observations-and-explanation">🔍 Observations and Explanation</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#extensions">🧪 Extensions</a>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -172,7 +188,256 @@
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
 <h1 id="problem-1">Problem 1</h1>
-</div>
+<p>🌊 Interference Patterns on a Water Surface
+Motivation
+Interference occurs when waves from different sources overlap, creating new patterns. On a water surface, this is visible when ripples from different points meet, forming distinctive interference patterns. These can either reinforce each other (constructive interference) or cancel out (destructive interference).</p>
+<p>Studying these patterns deepens our understanding of wave behavior and is useful in physics, engineering, and real-world applications like acoustics and antenna design.</p>
+<p>Problem Statement
+Objective:
+Analyze the interference patterns formed on a water surface due to the superposition of waves emitted from point sources located at the vertices of a regular polygon.</p>
+<h2 id="mathematical-model">📐 Mathematical Model</h2>
+<h3 id="single-disturbance-equation">Single Disturbance Equation</h3>
+<p>A circular wave originating from a point source located at position <span class="arithmatex">\( \vec{r}_i = (x_i, y_i) \)</span> can be described by the following wave equation:</p>
+<div class="arithmatex">\[
+u_i(\vec{r}, t) = A \cdot \cos\left(k \cdot |\vec{r} - \vec{r}_i| - \omega t + \phi_i\right)
+\]</div>
+<p>Where:</p>
+<ul>
+<li><span class="arithmatex">\( u_i(\vec{r}, t) \)</span>: Displacement of the water surface at position <span class="arithmatex">\( \vec{r} = (x, y) \)</span> and time <span class="arithmatex">\( t \)</span></li>
+<li><span class="arithmatex">\( A \)</span>: Amplitude of the wave</li>
+<li><span class="arithmatex">\( k = \frac{2\pi}{\lambda} \)</span>: Wave number, with <span class="arithmatex">\( \lambda \)</span> being the wavelength</li>
+<li><span class="arithmatex">\( \omega = 2\pi f \)</span>: Angular frequency, with <span class="arithmatex">\( f \)</span> the frequency</li>
+<li><span class="arithmatex">\( |\vec{r} - \vec{r}_i| \)</span>: Distance between the field point <span class="arithmatex">\( \vec{r} \)</span> and the source at <span class="arithmatex">\( \vec{r}_i \)</span></li>
+<li><span class="arithmatex">\( \phi_i \)</span>: Initial phase of the wave from source <span class="arithmatex">\( i \)</span> (assumed <span class="arithmatex">\( \phi_i = 0 \)</span> for all sources in this case)</li>
+</ul>
+<hr/>
+<h3 id="superposition-of-waves">Superposition of Waves</h3>
+<p>When there are <span class="arithmatex">\( N \)</span> sources (e.g., located at the vertices of a regular polygon), the total displacement at any point ( \</p>
+<h3 id="superposition-of-waves_1">🌊 Superposition of Waves</h3>
+<p>With <span class="arithmatex">\( N \)</span> sources placed at the vertices of a regular polygon, the total displacement of the water surface at any position <span class="arithmatex">\( \vec{r} \)</span> and time <span class="arithmatex">\( t \)</span> is given by the sum of the contributions from each source:</p>
+<div class="arithmatex">\[
+u(\vec{r}, t) = \sum_{i=1}^{N} A \cdot \cos\left(k \cdot |\vec{r} - \vec{r}_i| - \omega t\right)
+\]</div>
+<p>Where:
+- <span class="arithmatex">\( N \)</span>: Number of sources
+- <span class="arithmatex">\( \vec{r}_i = (x_i, y_i) \)</span>: Position of the <span class="arithmatex">\( i^\text{th} \)</span> wave source
+- All sources are assumed to be coherent (same frequency and amplitude) and in phase.</p>
+<hr/>
+<h3 id="simulation-parameters">⚙️ Simulation Parameters</h3>
+<div class="arithmatex">\[
+\begin{aligned}
+&amp;\text{Polygon:} &amp;&amp; \text{Square (4 sources)} \\
+&amp;\text{Radius:} &amp;&amp; R = 1.0 \, \text{unit (distance from center to vertex)} \\
+&amp;\text{Wavelength:} &amp;&amp; \lambda = 1.0 \\
+&amp;\text{Frequency:} &amp;&amp; f = 1.0 \\
+&amp;\text{Amplitude:} &amp;&amp; A = 1.0
+\end{aligned}
+\]</div>
+<p>Python Code for Visualization</p>
+<pre><code class="language-python">import numpy as np
+import matplotlib.pyplot as plt
+
+# Parameters
+A = 1.0         # amplitude
+f = 1.0         # frequency
+lambda_ = 1.0   # wavelength
+omega = 2 * np.pi * f
+k = 2 * np.pi / lambda_
+N = 4           # number of sources (square)
+R = 1.0         # radius of the polygon
+t = 0           # time snapshot
+
+# Create grid
+x = np.linspace(-3, 3, 500)
+y = np.linspace(-3, 3, 500)
+X, Y = np.meshgrid(x, y)
+U = np.zeros_like(X)
+
+# Compute source positions (square vertices)
+angles = np.linspace(0, 2 * np.pi, N, endpoint=False)
+source_positions = [(R * np.cos(a), R * np.sin(a)) for a in angles]
+
+# Superpose waves from each source
+for xi, yi in source_positions:
+    r = np.sqrt((X - xi)**2 + (Y - yi)**2)
+    U += A * np.cos(k * r - omega * t)
+
+# Plot
+plt.figure(figsize=(8, 6))
+plt.contourf(X, Y, U, levels=100, cmap='seismic')
+plt.colorbar(label='Displacement')
+plt.scatter(*zip(*source_positions), color='black', marker='x', label='Sources')
+plt.title("Wave Interference Pattern from 4-Point Sources (Square)")
+plt.xlabel("x")
+plt.ylabel("y")
+plt.axis('equal')
+plt.legend()
+plt.grid(False)
+plt.show()
+</code></pre>
+<p><img alt="alt text" src="../image.png"/> </p>
+<h3 id="observations-and-explanation">🔍 Observations and Explanation</h3>
+<ul>
+<li>
+<p><strong>Constructive interference</strong> occurs where wave crests (or troughs) from all sources meet <strong>in phase</strong>, leading to <strong>amplified displacements</strong>.</p>
+</li>
+<li>
+<p><strong>Destructive interference</strong> appears as <strong>dark or null regions</strong>, where the crest from one wave overlaps with the trough of another, resulting in <strong>cancellation</strong>.</p>
+</li>
+<li>
+<p>Due to the <strong>geometric symmetry</strong> of the square configuration, the resulting interference pattern also exhibits <strong>symmetry</strong> about the center and along its axes.</p>
+</li>
+<li>
+<p>As the number of sources <span class="arithmatex">\( N \)</span> increases (e.g., pentagon, hexagon, etc.), the interference pattern becomes more intricate, and <strong>radial symmetry</strong> may emerge—particularly in near-circular source arrangements.</p>
+</li>
+</ul>
+<hr/>
+<h3 id="extensions">🧪 Extensions</h3>
+<ul>
+<li>
+<p>Change <span class="arithmatex">\( N \)</span> to <strong>3 (triangle)</strong>, <strong>5 (pentagon)</strong>, <strong>6 (hexagon)</strong>, or more, to investigate how the <strong>geometry of the source layout</strong> affects the resulting pattern.</p>
+</li>
+<li>
+<p><strong>Animate</strong> the wave field by updating the time variable <span class="arithmatex">\( t \)</span> over successive frames to observe the <strong>temporal evolution</strong> of interference.</p>
+</li>
+<li>
+<p>Modify the <strong>wavelength</strong> <span class="arithmatex">\( \lambda \)</span>, <strong>frequency</strong> <span class="arithmatex">\( f \)</span>, or introduce <strong>initial phase differences</strong> <span class="arithmatex">\( \phi_i \)</span> between sources to explore how these parameters influence the <strong>interference structure</strong>.</p>
+</li>
+</ul>
+<p>📌 Wave Interference Model for 4-point Square</p>
+<p>📈 Contour Plot of the Interference Pattern</p>
+<p>📊 Line Plot at y = 0</p>
+<p>📋 Simulation Parameters Table</p>
+<h1 id="required-libraries">📚 Required Libraries</h1>
+<pre><code class="language-python">import numpy as np
+import matplotlib.pyplot as plt
+from IPython.display import display, HTML
+
+# ⚙️ Simulation Parameters
+A = 1.0            # Amplitude
+f = 1.0            # Frequency (Hz)
+λ = 1.0            # Wavelength
+ω = 2 * np.pi * f  # Angular frequency
+k = 2 * np.pi / λ  # Wave number
+N = 4              # Number of sources (square)
+R = 1.0            # Radius from center to vertex
+t = 0              # Time snapshot
+
+# 📐 Generate Source Positions (Square Vertices)
+angles = np.linspace(0, 2*np.pi, N, endpoint=False)
+source_positions = [(R * np.cos(a), R * np.sin(a)) for a in angles]
+
+# 🌐 Grid Setup
+grid_size = 400
+x = np.linspace(-3, 3, grid_size)
+y = np.linspace(-3, 3, grid_size)
+X, Y = np.meshgrid(x, y)
+U = np.zeros_like(X)
+
+# 🌊 Superposition of Waves
+for (xi, yi) in source_positions:
+    r = np.sqrt((X - xi)**2 + (Y - yi)**2)
+    U += A * np.cos(k * r - ω * t)
+
+# 🎨 Interference Pattern Plot (Contour)
+plt.figure(figsize=(8, 6))
+plt.contourf(X, Y, U, levels=100, cmap='viridis')
+plt.title("🌊 Interference Pattern from 4 Wave Sources (Square)", fontsize=14)
+plt.xlabel("x-axis")
+plt.ylabel("y-axis")
+plt.colorbar(label="Displacement")
+plt.grid(False)
+plt.show()
+</code></pre>
+<p>![</p>
+<p>](image-1.png)</p>
+<h1 id="line-plot-along-y-0-horizontal-slice">📈 Line Plot Along y = 0 (Horizontal Slice)</h1>
+<p>y_index = np.argmin(np.abs(y - 0))  # Find closest y=0
+plt.figure(figsize=(8, 4))
+plt.plot(x, U[y_index, :], color='crimson')
+plt.title("📈 Displacement Profile Along y = 0", fontsize=14)
+plt.xlabel("x-axis")
+plt.ylabel("Displacement")
+plt.grid(True)
+plt.show()</p>
+<p>![</p>
+<p>](image-2.png)</p>
+<h1 id="html-table-of-parameters">📋 HTML Table of Parameters</h1>
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Wave Simulation Parameters</title>
+<style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        table {
+            border-collapse: collapse;
+            width: 60%;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #333;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #444;
+            color: white;
+        }
+        caption {
+            caption-side: top;
+            font-size: 1.4em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+<table>
+<caption>📋 Simulation Parameters</caption>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+<th>Description</th>
+</tr>
+<tr>
+<td><b>A</b></td>
+<td>1.0</td>
+<td>Amplitude</td>
+</tr>
+<tr>
+<td><b>f</b></td>
+<td>1.0 Hz</td>
+<td>Frequency</td>
+</tr>
+<tr>
+<td><b>λ</b></td>
+<td>1.0</td>
+<td>Wavelength</td>
+</tr>
+<tr>
+<td><b>ω</b></td>
+<td>2π</td>
+<td>Angular Frequency</td>
+</tr>
+<tr>
+<td><b>k</b></td>
+<td>2π</td>
+<td>Wave Number</td>
+</tr>
+<tr>
+<td><b>N</b></td>
+<td>4</td>
+<td>Number of Sources</td>
+</tr>
+<tr>
+<td><b>R</b></td>
+<td>1.0</td>
+<td>Radius from Center to Vertex</td>
+</tr></table></body></html></div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
 <a class="btn btn-neutral float-left" href="../../2%20Gravity/Problem_3/" title="Problem 3"><span class="icon icon-circle-arrow-left"></span> Previous</a>
