@@ -296,34 +296,27 @@ R_{\text{eq}} = \frac{1}{0.3833} \approx 2.61 \, \Omega
                  ---</p>
 <pre><code class="language-python">import numpy as np
 import matplotlib.pyplot as plt
-import networkx as nx
+# Function to calculate equivalent resistance in series
+def equivalent_resistance_series(resistances):
+    return sum(resistances)
 
-def add_resistor(graph, node1, node2, resistance):
-    graph.add_edge(node1, node2, weight=resistance)
+# Function to calculate equivalent resistance in parallel
+def equivalent_resistance_parallel(resistances):
+    # Reciprocal of the equivalent resistance in parallel is the sum of reciprocals
+    reciprocal_sum = sum(1 / r for r in resistances)
+    if reciprocal_sum == 0:
+        return float('inf')  # Handle case when all resistances are infinite
+    return 1 / reciprocal_sum
 
-def equivalent_resistance(graph, start, end):
-    # Apply graph traversal (e.g., DFS or BFS) to calculate the equivalent resistance
-    pass  # Implement algorithm logic for reducing series and parallel resistors
+# Example 1: Simple Series Circuit
+resistors_series = [10, 20, 30]  # Example resistances in Ohms for series circuit
+R_eq_series = equivalent_resistance_series(resistors_series)
+print(f"Equivalent Resistance for Series Circuit: {R_eq_series} Ohms")
 
-# Example: Simple Series Circuit
-G = nx.Graph()
-add_resistor(G, 'A', 'B', 10)  # R1 = 10 Ohm
-add_resistor(G, 'B', 'C', 20)  # R2 = 20 Ohm
-add_resistor(G, 'C', 'D', 30)  # R3 = 30 Ohm
-
-# Calculate the equivalent resistance for a series circuit
-R_eq = equivalent_resistance(G, 'A', 'D')
-print("Equivalent Resistance: ", R_eq)
-
-# Example: Simple Parallel Circuit
-G2 = nx.Graph()
-add_resistor(G2, 'A', 'B', 10)  # R1 = 10 Ohm
-add_resistor(G2, 'B', 'C', 20)  # R2 = 20 Ohm
-add_resistor(G2, 'C', 'A', 30)  # R3 = 30 Ohm
-
-# Calculate the equivalent resistance for a parallel circuit
-R_eq_parallel = equivalent_resistance(G2, 'A', 'C')
-print("Equivalent Resistance for Parallel Circuit: ", R_eq_parallel)
+# Example 2: Simple Parallel Circuit
+resistors_parallel = [10, 20, 30]  # Example resistances in Ohms for parallel circuit
+R_eq_parallel = equivalent_resistance_parallel(resistors_parallel)
+print(f"Equivalent Resistance for Parallel Circuit: {R_eq_parallel} Ohms")
 </code></pre>
 <h1 id="conclusion">Conclusion</h1>
 <p>Using graph theory to calculate equivalent resistance provides a powerful method to simplify complex circuits. By representing the circuit as a graph and iteratively reducing series and parallel connections, we can compute the equivalent resistance efficiently, even for complicated networks.</p>
