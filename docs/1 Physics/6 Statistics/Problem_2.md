@@ -203,7 +203,7 @@ print(f"Estimated Pi (Buffon's Needle): {pi_estimate_buffon}")
 
 ### Explanation of the Code:
 
-#### Circle-based Monte Carlo Method:
+#### **Circle-based Monte Carlo Method:**
 
 1. **Random Point Generation:**
    - We generate random points inside a square that bounds a unit circle.
@@ -223,14 +223,15 @@ print(f"Estimated Pi (Buffon's Needle): {pi_estimate_buffon}")
    \]
    This formula works because the ratio of points inside the circle to the total number of points approximates the ratio of the areas of the circle and the square. Since the area of a unit circle is \( \pi \times r^2 \) (where \( r = 1 \)), and the area of the square is \( 4 \), the ratio gives an estimate for \( \pi \).
 
+---
 
-#### Buffon’s Needle Method:
+#### **Buffon’s Needle Method:**
 
 1. **Simulating Needle Drops:**
    - We simulate dropping a needle of length \( L \) onto a plane with parallel lines spaced \( d \) units apart.
 
 2. **Crossing Detection:**
-   - For each needle drop, we randomly select an angle \( \theta \) of the needle with respect to the parallel lines (ranging from 0 to \( \frac{\pi}{2} \)).
+   - For each needle drop, we randomly select an angle \( \theta \) of the needle with respect to the parallel lines (ranging from \( 0 \) to \( \frac{\pi}{2} \)).
    - We also randomly choose the distance \( x \) from the center of the needle to the nearest line. The needle crosses a line if:
    \[
    x \leq \frac{L}{2} \sin(\theta)
