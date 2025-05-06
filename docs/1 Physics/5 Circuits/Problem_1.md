@@ -22,19 +22,20 @@ we can simplify even the most intricate circuits step by step. This method is pa
   - \( V \) are the vertices (junctions),
   - \( E \) are the edges (resistors), each with a resistance value \( R \).
 
-#### 2. Identifying Series and Parallel Connections:
+### 2. Identifying Series and Parallel Connections:
 
 - **Series Connection**: When resistors are in series, the total resistance \( R_{\text{eq}} \) is given by:
-  
+
   \[
   R_{\text{eq}} = R_1 + R_2 + \dots + R_n
   \]
 
 - **Parallel Connection**: When resistors are in parallel, the total resistance \( R_{\text{eq}} \) is given by:
-  
+
   \[
   \frac{1}{R_{\text{eq}}} = \frac{1}{R_1} + \frac{1}{R_2} + \dots + \frac{1}{R_n}
   \]
+
 
 #### 3. Iterative Reduction:
 
