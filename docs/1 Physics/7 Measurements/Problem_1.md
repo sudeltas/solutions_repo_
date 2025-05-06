@@ -27,12 +27,6 @@ This exercise emphasizes rigorous measurement practices, uncertainty analysis, a
 1. Displace the pendulum slightly (<15°) and release it.
 2. Measure the time for 10 full oscillations, \( T_{\text{10}} \), and repeat this process 10 times. Record all 10 measurements.
 3. Calculate the mean time for 10 oscillations, \( \bar{T_{\text{10}}} \), and the standard deviation, \( \sigma_{\text{T_{\text{10}}}} \).
-4. Determine the uncertainty in the mean time using the formula:
-
-   \[
-   \Delta \bar{T_{\text{10}}} = \frac{\sigma_{\text{T_{\text{10}}}}}{\sqrt{n}}
-   \]
-
    where \( n \) is the number of measurements.
 
 ---
