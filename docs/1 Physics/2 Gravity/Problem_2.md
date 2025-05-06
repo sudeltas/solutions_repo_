@@ -55,7 +55,8 @@ The second cosmic velocity is the escape velocity, already discussed above. It i
 v_2 = \sqrt{\frac{2 G M}{r}}
 \]
 
-Where \( v_2 \) is the escape velocity, same as the formula for escape velocity.
+Where:
+\( v_2 \) is the escape velocity, same as the formula for escape velocity.
 
 ### Third Cosmic Velocity (Escape from the Solar System):
 
@@ -76,17 +77,24 @@ Where:
 
 We can calculate the first, second, and third cosmic velocities for celestial bodies like Earth, Mars, and Jupiter. Below are their key values:
 
-- **Earth:**
-  - Mass (\(M_{\text{earth}}\)): \(5.972 \times 10^{24} \, \text{kg}\)
-  - Radius (\(r_{\text{earth}}\)): \(6.371 \times 10^6 \, \text{m}\)
+-<h3>Earth</h3>
+<ul>
+  <li><strong>Mass</strong> (M<sub>earth</sub>): 5.972 × 10<sup>24</sup> kg</li>
+  <li><strong>Radius</strong> (r<sub>earth</sub>): 6.371 × 10<sup>6</sup> m</li>
+</ul>
 
-- **Mars:**
-  - Mass (\(M_{\text{mars}}\)): \(0.64171 \times 10^{24} \, \text{kg}\)
-  - Radius (\(r_{\text{mars}}\)): \(3.396 \times 10^6 \, \text{m}\)
+<h3>Mars</h3>
+<ul>
+  <li><strong>Mass</strong> (M<sub>mars</sub>): 0.64171 × 10<sup>24</sup> kg</li>
+  <li><strong>Radius</strong> (r<sub>mars</sub>): 3.396 × 10<sup>6</sup> m</li>
+</ul>
 
-- **Jupiter:**
-  - Mass (\(M_{\text{jupiter}}\)): \(1.898 \times 10^{27} \, \text{kg}\)
-  - Radius (\(r_{\text{jupiter}}\)): \(6.991 \times 10^7 \, \text{m}\)
+<h3>Jupiter</h3>
+<ul>
+  <li><strong>Mass</strong> (M<sub>jupiter</sub>): 1.898 × 10<sup>27</sup> kg</li>
+  <li><strong>Radius</strong> (r<sub>jupiter</sub>): 6.991 × 10<sup>7</sup> m</li>
+</ul>
+
 
 ## Python Implementation:
 
