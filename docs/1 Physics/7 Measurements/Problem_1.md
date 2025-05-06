@@ -217,14 +217,14 @@ for result in results:
         <thead>
             <tr>
                 <th>Measurement #</th>
-                <th>\( T_{\text{10}} \) (seconds)</th>
-                <th>\( \bar{T_{\text{10}}} \) (seconds)</th>
-                <th>\( \sigma_{\text{T_{\text{10}}}} \) (seconds)</th>
-                <th>\( \Delta \bar{T_{\text{10}}} \) (seconds)</th>
-                <th>\( L \) (meters)</th>
-                <th>\( T \) (seconds)</th>
-                <th>\( g \) (m/s\(^2\))</th>
-                <th>\( \Delta g \) (m/s\(^2\))</th>
+                <th>T<sub>10</sub> (seconds)</th>
+                <th>&#x03C4;<sub>10</sub> (seconds)</th>
+                <th>&sigma;<sub>T<sub>10</sub></sub> (seconds)</th>
+                <th>&#x0394; &#x03C4;<sub>10</sub> (seconds)</th>
+                <th>L (meters)</th>
+                <th>T (seconds)</th>
+                <th>g (m/s<sup>2</sup>)</th>
+                <th>&#x0394;g (m/s<sup>2</sup>)</th>
             </tr>
         </thead>
         <tbody>
