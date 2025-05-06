@@ -357,28 +357,28 @@ print(f"Estimated Pi (Buffon's Needle): {pi_estimate_buffon}")
 <h4 id="circle-based-monte-carlo-method">Circle-based Monte Carlo Method:</h4>
 <ol>
 <li><strong>Random Point Generation:</strong></li>
-<li>We randomly generate points inside a square that bounds a unit circle.</li>
+<li>We generate random points inside a square that bounds a unit circle.</li>
 <li>
-<p>The square is defined by the coordinates <span class="arithmatex">\( x \)</span> and <span class="arithmatex">\( y \)</span> in the range <span class="arithmatex">\([-1, 1]\)</span>, and the unit circle is centered at the origin with a radius of 1.</p>
+<p>The square is defined by coordinates <span class="arithmatex">\( x \)</span> and <span class="arithmatex">\( y \)</span> in the range <span class="arithmatex">\([-1, 1]\)</span>, and the unit circle is centered at the origin with a radius of 1.</p>
 </li>
 <li>
-<p><strong>Point Inside Circle Check:</strong></p>
+<p><strong>Checking if a Point is Inside the Circle:</strong></p>
 </li>
 <li>
-<p>We calculate how many points fall inside the unit circle by checking the condition:
+<p>To check whether a point is inside the unit circle, we verify if it satisfies the equation:
    [
    x^2 + y^2 \leq 1
    ]
-   where <span class="arithmatex">\( x \)</span> and <span class="arithmatex">\( y \)</span> are the coordinates of the points.</p>
+   where <span class="arithmatex">\( x \)</span> and <span class="arithmatex">\( y \)</span> are the coordinates of the point.</p>
 </li>
 <li>
 <p><strong>Pi Estimation:</strong></p>
 </li>
-<li>Using the ratio of points inside the circle to the total number of points, we estimate <span class="arithmatex">\( \pi \)</span> using the formula:
+<li>The value of <span class="arithmatex">\( \pi \)</span> is estimated by the ratio of points that fall inside the circle to the total number of points. This ratio is multiplied by 4 to account for the area of the square, resulting in the formula:
    [
    \pi \approx 4 \times \frac{\text{Points Inside Circle}}{\text{Total Points}}
    ]
-   This formula works because the ratio of points inside the circle to the total number of points inside the square approximates the area of the circle relative to the square, and the area of the circle is <span class="arithmatex">\( \pi \times r^2 \)</span>, where <span class="arithmatex">\( r = 1 \)</span>.</li>
+   This formula works because the ratio of points inside the circle to the total number of points approximates the ratio of the areas of the circle and the square. Since the area of a unit circle is <span class="arithmatex">\( \pi \times r^2 \)</span> (where <span class="arithmatex">\( r = 1 \)</span>), and the area of the square is <span class="arithmatex">\( 4 \)</span>, the ratio gives an estimate for <span class="arithmatex">\( \pi \)</span>.</li>
 </ol>
 <h4 id="buffons-needle-method">Buffon’s Needle Method:</h4>
 <ol>
