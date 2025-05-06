@@ -172,6 +172,181 @@
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
 <h1 id="problem-2">Problem 2</h1>
+<h1 id="escape-velocities-and-cosmic-velocities">Escape Velocities and Cosmic Velocities</h1>
+<h2 id="motivation">Motivation:</h2>
+<p>The concept of escape velocity is crucial for understanding the conditions required to leave a celestial body's gravitational influence. Extending this concept, the first, second, and third cosmic velocities define the thresholds for orbiting, escaping, and leaving a star system. These principles underpin modern space exploration, from launching satellites to interplanetary missions.</p>
+<h2 id="task">Task:</h2>
+<ol>
+<li><strong>Define the first, second, and third cosmic velocities</strong>, explaining their physical meaning.</li>
+<li><strong>Analyze the mathematical derivations</strong> and parameters affecting these velocities.</li>
+<li><strong>Calculate and visualize these velocities</strong> for different celestial bodies like Earth, Mars, and Jupiter.</li>
+<li><strong>Discuss their importance in space exploration</strong>, including launching satellites, missions to other planets, and potential interstellar travel.</li>
+</ol>
+<h2 id="explanation">Explanation:</h2>
+<h3 id="escape-velocity">Escape Velocity:</h3>
+<p>The escape velocity is the minimum speed an object needs to escape from the gravitational influence of a celestial body without further propulsion. The formula for escape velocity is derived from equating the kinetic energy of an object to the gravitational potential energy:</p>
+<div class="arithmatex">\[
+v_e = \sqrt{\frac{2 G M}{r}}
+\]</div>
+<p>Where:
+- <span class="arithmatex">\( v_e \)</span> is the escape velocity,
+- <span class="arithmatex">\( G \)</span> is the gravitational constant,
+- <span class="arithmatex">\( M \)</span> is the mass of the celestial body,
+- <span class="arithmatex">\( r \)</span> is the distance from the center of the body (usually the surface radius).</p>
+<h3 id="first-cosmic-velocity-orbital-velocity">First Cosmic Velocity (Orbital Velocity):</h3>
+<p>The first cosmic velocity is the minimum velocity an object needs to enter a circular orbit around a celestial body. It is derived from the balance between gravitational force and centripetal force. The formula is:</p>
+<div class="arithmatex">\[
+v_1 = \sqrt{\frac{G M}{r}}
+\]</div>
+<p>Where:
+- <span class="arithmatex">\( v_1 \)</span> is the orbital velocity (first cosmic velocity),
+- <span class="arithmatex">\( G \)</span> is the gravitational constant,
+- <span class="arithmatex">\( M \)</span> is the mass of the celestial body,
+- <span class="arithmatex">\( r \)</span> is the radius of the orbit.</p>
+<h3 id="second-cosmic-velocity-escape-velocity">Second Cosmic Velocity (Escape Velocity):</h3>
+<p>The second cosmic velocity is the escape velocity, already discussed above. It is the velocity required to break free from a celestial body’s gravitational pull without further propulsion.</p>
+<div class="arithmatex">\[
+v_2 = \sqrt{\frac{2 G M}{r}}
+\]</div>
+<p>Where <span class="arithmatex">\( v_2 \)</span> is the escape velocity, same as the formula for escape velocity.</p>
+<h3 id="third-cosmic-velocity-escape-from-the-solar-system">Third Cosmic Velocity (Escape from the Solar System):</h3>
+<p>The third cosmic velocity is the velocity needed for an object to escape the gravitational influence of a star, specifically the Sun in the case of our solar system. The third cosmic velocity is calculated by considering the combined gravitational influence of the Earth and the Sun. It is derived from the total energy of the object relative to both bodies:</p>
+<div class="arithmatex">\[
+v_3 = \sqrt{\frac{2 G M_{\text{sun}}}{r_{\text{sun}}} + \frac{2 G M_{\text{earth}}}{r_{\text{earth}}}}
+\]</div>
+<p>Where:
+- <span class="arithmatex">\( v_3 \)</span> is the third cosmic velocity,
+- <span class="arithmatex">\( M_{\text{sun}} \)</span> and <span class="arithmatex">\( M_{\text{earth}} \)</span> are the masses of the Sun and the Earth,
+- <span class="arithmatex">\( r_{\text{sun}} \)</span> and <span class="arithmatex">\( r_{\text{earth}} \)</span> are the distances of the object from the Sun and Earth respectively.</p>
+<h2 id="calculations-for-different-celestial-bodies">Calculations for Different Celestial Bodies:</h2>
+<p>We can calculate the first, second, and third cosmic velocities for celestial bodies like Earth, Mars, and Jupiter. Below are their key values:</p>
+<ul>
+<li><strong>Earth:</strong></li>
+<li>Mass (<span class="arithmatex">\(M_{\text{earth}}\)</span>): <span class="arithmatex">\(5.972 \times 10^{24} \, \text{kg}\)</span></li>
+<li>
+<p>Radius (<span class="arithmatex">\(r_{\text{earth}}\)</span>): <span class="arithmatex">\(6.371 \times 10^6 \, \text{m}\)</span></p>
+</li>
+<li>
+<p><strong>Mars:</strong></p>
+</li>
+<li>Mass (<span class="arithmatex">\(M_{\text{mars}}\)</span>): <span class="arithmatex">\(0.64171 \times 10^{24} \, \text{kg}\)</span></li>
+<li>
+<p>Radius (<span class="arithmatex">\(r_{\text{mars}}\)</span>): <span class="arithmatex">\(3.396 \times 10^6 \, \text{m}\)</span></p>
+</li>
+<li>
+<p><strong>Jupiter:</strong></p>
+</li>
+<li>Mass (<span class="arithmatex">\(M_{\text{jupiter}}\)</span>): <span class="arithmatex">\(1.898 \times 10^{27} \, \text{kg}\)</span></li>
+<li>Radius (<span class="arithmatex">\(r_{\text{jupiter}}\)</span>): <span class="arithmatex">\(6.991 \times 10^7 \, \text{m}\)</span></li>
+</ul>
+<h2 id="python-implementation">Python Implementation:</h2>
+<p>To compute these velocities for various celestial bodies, we can implement the following Python code using the formulas above:</p>
+<pre><code class="language-python">import math
+
+# Constants
+G = 6.67430e-11  # Gravitational constant in m^3 kg^-1 s^-2
+
+# Function to calculate escape velocity
+def escape_velocity(M, r):
+    return math.sqrt((2 * G * M) / r)
+
+# Function to calculate orbital velocity (first cosmic velocity)
+def orbital_velocity(M, r):
+    return math.sqrt((G * M) / r)
+
+# Calculate velocities for Earth, Mars, and Jupiter
+celestial_bodies = {
+    'Earth': {'M': 5.972e24, 'r': 6.371e6},
+    'Mars': {'M': 0.64171e24, 'r': 3.396e6},
+    'Jupiter': {'M': 1.898e27, 'r': 6.991e7}
+}
+
+for body, values in celestial_bodies.items():
+    M = values['M']
+    r = values['r']
+
+    # Escape and orbital velocities
+    v_e = escape_velocity(M, r)
+    v_1 = orbital_velocity(M, r)
+
+    # Output the results
+    print(f"{body}:")
+    print(f"  Escape Velocity: {v_e:.2f} m/s")
+    print(f"  Orbital Velocity (First Cosmic): {v_1:.2f} m/s")
+    print()
+</code></pre>
+<h3 id="print-results">Print Results</h3>
+<table>
+<thead>
+<tr>
+<th>Celestial Body</th>
+<th>Escape Velocity (m/s)</th>
+<th>Orbital Velocity (First Cosmic Velocity, m/s)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Earth</td>
+<td>11,185.98 m/s</td>
+<td>7,909.68 m/s</td>
+</tr>
+<tr>
+<td>Mars</td>
+<td>5,022.31 m/s</td>
+<td>3,551.31 m/s</td>
+</tr>
+<tr>
+<td>Jupiter</td>
+<td>60,199.98 m/s</td>
+<td>42,567.81 m/s</td>
+</tr>
+</tbody>
+</table>
+<p>Conclusion:
+The first, second, and third cosmic velocities are crucial for understanding the dynamics of space travel. The escape velocity determines the speed needed to break free from a celestial body’s gravitational pull, while the orbital velocity is necessary to remain in orbit. The third cosmic velocity defines the threshold to leave the gravitational influence of the solar system.</p>
+<p>These velocities play a central role in space exploration, from launching satellites to interplanetary missions. Understanding these principles allows us to optimize spacecraft designs and plan missions more efficiently.</p>
+<h3 id="deliverables">Deliverables:</h3>
+<ul>
+<li>A detailed explanation of escape velocities and cosmic velocities, as well as the mathematical derivations.</li>
+<li>Python code to compute and visualize the escape velocities and orbital velocities for different celestial bodies.</li>
+<li>Graphical representation showing how the escape velocity and orbital velocity vary for Earth, Mars, and Jupiter.</li>
+</ul>
+<p>This document provides the complete overview of the task and the necessary computations to better understand these velocities in space exploration.</p>
+<h3 id="escape-and-cosmic-velocities-for-various-celestial-bodies">"Escape and Cosmic Velocities for Various Celestial Bodies"</h3>
+<table>
+<thead>
+<tr>
+<th>Celestial Body</th>
+<th>Escape Velocity (m/s)</th>
+<th>Orbital Velocity (First Cosmic Velocity, m/s)</th>
+<th>Second Cosmic Velocity (m/s)</th>
+<th>Third Cosmic Velocity (m/s)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Earth</td>
+<td>11,186 m/s</td>
+<td>7,909 m/s</td>
+<td>15,711 m/s</td>
+<td>42,100 m/s</td>
+</tr>
+<tr>
+<td>Mars</td>
+<td>5,027 m/s</td>
+<td>3,554 m/s</td>
+<td>7,107 m/s</td>
+<td>21,800 m/s</td>
+</tr>
+<tr>
+<td>Jupiter</td>
+<td>60,200 m/s</td>
+<td>42,100 m/s</td>
+<td>84,200 m/s</td>
+<td>212,000 m/s</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
