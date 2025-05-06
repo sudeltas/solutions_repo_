@@ -63,7 +63,9 @@ The uncertainty in \( g \), \( \Delta g \), can be propagated from the uncertain
 \]
 
 where:
+
 - \( \Delta L \) is the uncertainty in the length measurement,
+
 - \( \Delta T \) is the uncertainty in the period measurement.
 
 ---
