@@ -4,6 +4,8 @@
 
 Projectile motion describes the motion of an object thrown into the air, subject only to gravitational acceleration.
 
+---
+
 #🧮 Equations of Motion
 The motion is broken into two components:
 
