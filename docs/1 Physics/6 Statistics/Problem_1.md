@@ -1,121 +1,99 @@
 # Problem 1
-📘 Exploring the Central Limit Theorem through Simulations
-🎯 Motivation
-The Central Limit Theorem (CLT) is one of the foundational results in probability theory. It states:
-If \( X_1, X_2, \dots, X_n \) are i.i.d. with mean \( \mu \) and variance \( \sigma^2 \), then as \( n \to \infty \):
+Exploring the Central Limit Theorem Through Simulations
+📌 Motivation
+The Central Limit Theorem (CLT) states that the sampling distribution of the sample mean approaches a normal distribution as the sample size increases, regardless of the original population distribution (given finite variance).
+
+This concept is fundamental in statistics and forms the basis for inference, hypothesis testing, and confidence intervals.
+🧪 LaTeX – Central Limit Theorem Statement
+\[
+\text{If } X_1, X_2, \dots, X_n \text{ are i.i.d. with mean } \mu \text{ and variance } \sigma^2, \text{ then:}
+\]
 
 \[
 \frac{\bar{X}_n - \mu}{\sigma / \sqrt{n}} \xrightarrow{d} \mathcal{N}(0, 1)
 \]
-In simpler terms, regardless of the shape of the original distribution, the sampling distribution of the sample mean becomes approximately normal if the sample size is large enough.
 
-🧪 1. Population Distribution: Exponential, Uniform, and Binomial
-We will use three distinct distributions:
-
-Exponential Distribution (skewed)
-
-Uniform Distribution (flat)
-
-Binomial Distribution (discrete)
+\[
+\mathbb{E}[\bar{X}] = \mu, \quad \text{Var}(\bar{X}) = \frac{\sigma^2}{n}
+\]
+🔢 Step 1: Generate Population Distributions
 ```python
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-# For reproducibility
+# Set style
+sns.set(style="whitegrid")
+
+# Set seed for reproducibility
 np.random.seed(42)
 
-# Define populations
-population_size = 100_000
-exp_pop = np.random.exponential(scale=2.0, size=population_size)
-uni_pop = np.random.uniform(low=0, high=10, size=population_size)
-binom_pop = np.random.binomial(n=10, p=0.5, size=population_size)
-📊 2. Sampling and Visualization of Sample Means
-We will take repeated samples and compute sample means for different sample sizes 
-𝑛=5,30,50 Then we will plot histograms to observe convergence to normal distribution.
-def simulate_sample_means(population, sample_size=30, num_samples=1000):
+# Population sizes
+N = 100_000
+
+# Generate populations
+pop_uniform = np.random.uniform(0, 1, N)
+pop_exponential = np.random.exponential(1, N)
+pop_binomial = np.random.binomial(n=10, p=0.5, size=N)
+def sample_means(population, sample_size=30, n_samples=1000):
     means = []
-    for _ in range(num_samples):
-        sample = np.random.choice(population, size=sample_size)
+    for _ in range(n_samples):
+        sample = np.random.choice(population, size=sample_size, replace=False)
         means.append(np.mean(sample))
-    return means
-📈 3. Visualization: Sampling Distribution
-Let’s plot sample mean distributions from the exponential population:
-sample_sizes = [5, 30, 50]
-populations = {'Exponential': exp_pop, 'Uniform': uni_pop, 'Binomial': binom_pop}
-
-for name, pop in populations.items():
-    plt.figure(figsize=(15, 4))
-    for i, n in enumerate(sample_sizes, 1):
-        sample_means = simulate_sample_means(pop, sample_size=n)
-        plt.subplot(1, 3, i)
-        sns.histplot(sample_means, kde=True, color='tomato', stat='density')
-        plt.title(f"{name} Dist. Sample Size = {n}")
+    return np.array(means)
+    def plot_sampling_distribution(population, name, sample_sizes=[5, 10, 30, 50]):
+    plt.figure(figsize=(16, 10))
+    for i, size in enumerate(sample_sizes, 1):
+        means = sample_means(population, sample_size=size)
+        plt.subplot(2, 2, i)
+        sns.histplot(means, kde=True, bins=30, color="cornflowerblue")
+        plt.title(f"{name} Dist - Sample Size {size}", fontsize=14)
         plt.xlabel("Sample Mean")
-    plt.suptitle(f"{name} Population - Sampling Distribution of Means", fontsize=16)
-    plt.tight_layout()
+        plt.ylabel("Frequency")
+    plt.suptitle(f"Sampling Distributions from {name} Population", fontsize=16)
+    plt.tight_layout(rect=[0, 0, 1, 0.96])
     plt.show()
-📐 4. Mathematical Justification
-Let’s recall the formulas:
+    plot_sampling_distribution(pop_uniform, "Uniform")
+plot_sampling_distribution(pop_exponential, "Exponential")
+plot_sampling_distribution(pop_binomial, "Binomial")
+```
+📋 Step 2: HTML Table of Population Statistics
+<table border="1">
+  <tr>
+    <th>Distribution</th>
+    <th>Mean (μ)</th>
+    <th>Variance (σ²)</th>
+  </tr>
+  <tr>
+    <td>Uniform [0, 1]</td>
+    <td>0.5</td>
+    <td>1/12 ≈ 0.083</td>
+  </tr>
+  <tr>
+    <td>Exponential(λ=1)</td>
+    <td>1.0</td>
+    <td>1.0</td>
+  </tr>
+  <tr>
+    <td>Binomial(n=10, p=0.5)</td>
+    <td>5.0</td>
+    <td>2.5</td>
+  </tr>
+</table>
+🧠 Step 6: Interpretation
+As sample size increases, the shape of the sampling distribution of the mean approaches normality.
 
-Mean of sample means remains the same:
-\[
-\mathbb{E}[\bar{X}] = \mu
-\]
+This effect occurs even if the original population is skewed or non-normal (e.g., exponential).
 
+Variance of sample mean decreases as sample size increases:
 \[
 \text{Var}(\bar{X}) = \frac{\sigma^2}{n}
 \]
 
-As sample size 𝑛 increases, the spread (standard deviation) of the sample mean decreases, leading to a more concentrated (and normal) distribution.
+🎯 Applications
+Quality control: Predict deviations in manufactured goods.
 
-🔍 5. Parameter Exploration Table
-Below is a table showing sample standard deviations (spread) of sample means for different distributions and sample sizes.
+Financial modeling: Estimate expected returns from historical data.
 
-from IPython.display import display, HTML
-
-def sample_mean_std(pop, sizes):
-    rows = []
-    for n in sizes:
-        sample_means = simulate_sample_means(pop, sample_size=n)
-        rows.append(f"<tr><td>{n}</td><td>{np.std(sample_means):.4f}</td>")
-    return rows
-
-sizes = [5, 30, 50]
-html = """
-<table border="1">
-<tr>
-<th>Sample Size</th>
-<th>Exponential STD</th>
-<th>Uniform STD</th>
-<th>Binomial STD</th>
-</tr>
-"""
-
-for i in sizes:
-    exp_std = np.std(simulate_sample_means(exp_pop, i))
-    uni_std = np.std(simulate_sample_means(uni_pop, i))
-    bin_std = np.std(simulate_sample_means(binom_pop, i))
-    html += f"<tr><td>{i}</td><td>{exp_std:.4f}</td><td>{uni_std:.4f}</td><td>{bin_std:.4f}</td></tr>"
-
-html += "</table>"
-
-display(HTML(html))
-🧠 6. Real-World Applications
-Manufacturing Quality Control: Averages of product dimensions are monitored, not single units.
-
-Finance: Portfolio average returns across time intervals.
-
-Medicine: Average blood pressure from repeated clinical trials.
-
-📦 7. Summary
-The Central Limit Theorem ensures that the distribution of sample means becomes approximately normal as 
-𝑛
-→
-∞
-n→∞, regardless of population shape.
-
-This is confirmed through simulation across exponential, uniform, and binomial distributions.
-
-CLT allows us to apply powerful inference tools (like z-tests) even with non-normal data — as long as the sample size is large enough.
+Medical studies: Determine treatment effectiveness based on sample averages.
 
