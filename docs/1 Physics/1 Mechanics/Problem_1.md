@@ -9,8 +9,8 @@ Projectile motion describes the motion of an object thrown into the air, subject
 #🧮 Equations of Motion
 The motion is broken into two components:
 
-1.Horizontal (x-axis)
-2.Vertical (y-axis)
+○ Horizontal (x-axis)
+○ Vertical (y-axis)
 
 ---
 
