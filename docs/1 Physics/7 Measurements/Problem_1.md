@@ -197,34 +197,30 @@ for result in results:
         table {
             width: 100%;
             border-collapse: collapse;
+            margin: 20px 0;
+        }
+        table, th, td {
+            border: 1px solid black;
         }
         th, td {
-            padding: 8px;
+            padding: 8px 12px;
             text-align: center;
-            border: 1px solid #ddd;
-        }
-        th {
-            background-color: #f2f2f2;
-        }
-        tr:nth-child(even) {
-            background-color: #f9f9f9;
         }
     </style>
 </head>
 <body>
-    <h1>Gravitational Acceleration Measurement Results</h1>
+
+    <h2>Measurement Results</h2>
     <table>
         <thead>
             <tr>
                 <th>Measurement #</th>
                 <th>T<sub>10</sub> (seconds)</th>
-                <th>&#x03C4;<sub>10</sub> (seconds)</th>
-                <th>&sigma;<sub>T<sub>10</sub></sub> (seconds)</th>
-                <th>&#x0394; &#x03C4;<sub>10</sub> (seconds)</th>
-                <th>L (meters)</th>
-                <th>T (seconds)</th>
-                <th>g (m/s<sup>2</sup>)</th>
-                <th>&#x0394;g (m/s<sup>2</sup>)</th>
+                <th>Mean Time for 10 oscillations (seconds)</th>
+                <th>Length (meters)</th>
+                <th>Period (seconds)</th>
+                <th>Gravitational Acceleration (g) (m/s<sup>2</sup>)</th>
+                <th>Uncertainty in g (delta_g) (m/s<sup>2</sup>)</th>
             </tr>
         </thead>
         <tbody>
@@ -232,10 +228,8 @@ for result in results:
                 <td>1</td>
                 <td>20.1</td>
                 <td>20.1</td>
-                <td>—</td>
-                <td>—</td>
                 <td>1.5</td>
-                <td>2.010</td>
+                <td>2.01</td>
                 <td>14.6575</td>
                 <td>1.4593</td>
             </tr>
@@ -243,8 +237,6 @@ for result in results:
                 <td>2</td>
                 <td>19.8</td>
                 <td>19.8</td>
-                <td>—</td>
-                <td>—</td>
                 <td>1.5</td>
                 <td>1.98</td>
                 <td>15.1050</td>
@@ -252,41 +244,9 @@ for result in results:
             </tr>
         </tbody>
     </table>
+
 </body>
 </html>
 
-<table border="1">
-    <thead>
-        <tr>
-            <th>Measurement #</th>
-            <th>T<sub>10</sub> (seconds)</th>
-            <th>Mean T<sub>10</sub> (seconds)</th>
-            <th>Length L (meters)</th>
-            <th>Period T (seconds)</th>
-            <th>g (m/s<sup>2</sup>)</th>
-            <th>Δg (m/s<sup>2</sup>)</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>1</td>
-            <td>20.1</td>
-            <td>20.1</td>
-            <td>1.5</td>
-            <td>2.01</td>
-            <td>9.82</td>
-            <td>0.02</td>
-        </tr>
-        <tr>
-            <td>2</td>
-            <td>19.8</td>
-            <td>19.8</td>
-            <td>1.5</td>
-            <td>1.98</td>
-            <td>9.79</td>
-            <td>0.03</td>
-        </tr>
-    </tbody>
-</table>
 
 
