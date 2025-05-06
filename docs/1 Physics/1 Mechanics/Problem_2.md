@@ -4,14 +4,22 @@
 #📌 Motivation
 The forced damped pendulum illustrates how the simple motion of a pendulum becomes drastically more complex when damping and external forcing are introduced. These interactions give rise to phenomena such as:
 
+---
+
 #Resonance
 A phenomenon where a system oscillates at maximum amplitude when driven at its natural frequency.
+
+---
 
 #Quasiperiodic Motion
 Motion that results from the combination of two or more incommensurate frequencies, leading to a complex but non-chaotic behavior.
 
+---
+
 #Chaos
 A state of unpredictable, irregular motion that occurs when a system is highly sensitive to initial conditions, often seen when driving forces are close to resonant frequencies.
+
+---
 
 #Applications of this model span:
 Climate Systems: Understanding complex cycles and feedback loops within climate dynamics.
@@ -42,6 +50,8 @@ $\omega_0$: Natural frequency $(\omega_0 = \sqrt{g/L})$
 $A$: Amplitude of the driving force
 
 $\omega$: Driving frequency
+
+---
 
 #✅ Small-Angle Approximation
 
@@ -94,6 +104,8 @@ At low forcing: periodic or quasiperiodic motion
 At certain parameter ranges: chaotic behavior, sensitive to initial conditions
 
 Visual tools: Phase space, Poincaré sections, Bifurcation diagrams
+
+---
 
 #🌍 3. Practical Applications
 The forced damped pendulum model applies to many real systems:
