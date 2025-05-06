@@ -33,6 +33,8 @@ For a projectile launched and landing at the same height:
 
 $T = \frac{2v_0 \sin(\theta)}{g}$
 
+---
+
 #📏 Horizontal Range
 
 Using time of flight in the x-position:
