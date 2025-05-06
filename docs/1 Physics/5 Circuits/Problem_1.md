@@ -144,6 +144,60 @@ resistors_parallel = [10, 20, 30]  # Example resistances in Ohms for parallel ci
 R_eq_parallel = equivalent_resistance_parallel(resistors_parallel)
 print(f"Equivalent Resistance for Parallel Circuit: {R_eq_parallel} Ohms")
 ```
+#Print Results
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Equivalent Resistance Results</title>
+    <style>
+        table {
+            width: 50%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            text-align: center;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 10px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        caption {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <table>
+        <caption>Equivalent Resistance Calculation Results</caption>
+        <thead>
+            <tr>
+                <th>Configuration</th>
+                <th>Equivalent Resistance (Ω)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Series Circuit</td>
+                <td>60 Ω</td>
+            </tr>
+            <tr>
+                <td>Parallel Circuit</td>
+                <td>5.46 Ω</td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>
+
 
 #Conclusion
 Using graph theory to calculate equivalent resistance provides a powerful method to simplify complex circuits. By representing the circuit as a graph and iteratively reducing series and parallel connections, we can compute the equivalent resistance efficiently, even for complicated networks.
