@@ -134,13 +134,14 @@ plot_sampling_distribution(pop_binomial, "Binomial")
     <td>5.0</td>
     <td>2.5</td>
   </tr>
-</table>
-🧠 Step 6: Interpretation
-As sample size increases, the shape of the sampling distribution of the mean approaches normality.
+### 🧠 Step 6: Interpretation
+
+As the sample size increases, the shape of the sampling distribution of the mean approaches normality.
 
 This effect occurs even if the original population is skewed or non-normal (e.g., exponential).
 
-Variance of sample mean decreases as sample size increases:
+The variance of the sample mean decreases as the sample size increases:
+
 \[
 \text{Var}(\bar{X}) = \frac{\sigma^2}{n}
 \]
