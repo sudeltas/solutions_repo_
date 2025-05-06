@@ -4,29 +4,6 @@
 ## Motivation
 When an object is released from a moving rocket near Earth, its trajectory depends on the initial conditions and gravitational forces acting on it. This problem is a fundamental example of orbital mechanics and offers a rich context to understand how objects move under the influence of gravity. These trajectories are of particular interest for space missions, such as deploying payloads or returning objects to Earth. Understanding the potential outcomes (e.g., parabolic, hyperbolic, elliptical paths) is essential for predicting and planning mission objectives.
 
-## Task
-1. **Analyze the Possible Trajectories**: Identify and discuss the types of trajectories a payload might follow when released near Earth, including parabolic, hyperbolic, and elliptical paths. These trajectories depend heavily on the object's initial velocity and position relative to Earth.
-  
-2. **Perform Numerical Analysis**: Calculate the path of the payload based on given initial conditions such as position, velocity, and altitude. Use numerical methods to model and compute the trajectory using the gravitational force.
-
-3. **Discuss Applications**: Discuss how these trajectories relate to practical space scenarios such as orbital insertion, reentry, or escape trajectories.
-
-4. **Develop a Computational Tool**: Create a simulation model that can visualize the motion of the payload under Earth's gravity, considering factors like initial velocity, direction, and position. 
-
-## Hints and Resources
-- **Gravitational Principles**: Use Newton's Law of Gravitation \( F = \frac{G M m}{r^2} \), where \( M \) is the mass of Earth, \( m \) is the mass of the payload, \( r \) is the distance from the center of Earth, and \( G \) is the gravitational constant.
-  
-- **Kepler's Laws**: Utilize Kepler’s Laws to understand orbital motion. For example, an object’s orbit will be elliptical, with Earth at one of the foci in elliptical orbits.
-
-- **Numerical Methods**: You can employ numerical techniques like Euler’s method, Runge-Kutta methods, or more advanced algorithms (like symplectic integrators) to solve the equations of motion.
-
-- **Software Tools**: Python libraries like NumPy, SciPy, and Matplotlib are excellent tools for performing numerical analysis and visualization.
-
-## Deliverables
-- **Markdown Document**: A detailed explanation of the principles behind the problem.
-- **Python Script or Notebook**: Implement the simulations that model the payload's motion. Include code that computes the trajectory for different initial conditions and produces graphical representations.
-- **Graphical Representations**: Visualize the orbital trajectories, escape velocities, and payload trajectories near Earth using plots. These could include phase diagrams, time evolution plots, and visual trajectories showing parabolic, hyperbolic, and elliptical motion.
-
 ## Trajectories of a Freely Released Payload Near Earth (Possible Types)
 Here are some common trajectory types you might encounter when releasing a payload near Earth:
 
@@ -53,10 +30,15 @@ F = \frac{GMm}{r^2}
 \]
 
 Where:
+
 - \( F \) is the gravitational force,
+
 - \( G \) is the gravitational constant (\( 6.674 \times 10^{-11} \, \text{N}\cdot \text{m}^2/\text{kg}^2 \)),
+
 - \( M \) is the mass of Earth (\( 5.972 \times 10^{24} \, \text{kg} \)),
+
 - \( m \) is the mass of the payload,
+
 - \( r \) is the distance from the center of the Earth.
 
 The resulting trajectory is a solution to the second-order differential equation, where the force \( F \) is related to the acceleration of the payload \( a = \frac{d^2r}{dt^2} \). 
