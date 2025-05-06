@@ -22,6 +22,7 @@ v_e = \sqrt{\frac{2 G M}{r}}
 \]
 
 Where:
+
 - \( v_e \) is the escape velocity,
 
 - \( G \) is the gravitational constant,
@@ -39,6 +40,7 @@ v_1 = \sqrt{\frac{G M}{r}}
 \]
 
 Where:
+
 - \( v_1 \) is the orbital velocity (first cosmic velocity),
 
 - \( G \) is the gravitational constant,
@@ -56,6 +58,7 @@ v_2 = \sqrt{\frac{2 G M}{r}}
 \]
 
 Where:
+
 \( v_2 \) is the escape velocity, same as the formula for escape velocity.
 
 ### Third Cosmic Velocity (Escape from the Solar System):
@@ -67,6 +70,7 @@ v_3 = \sqrt{\frac{2 G M_{\text{sun}}}{r_{\text{sun}}} + \frac{2 G M_{\text{earth
 \]
 
 Where:
+
 - \( v_3 \) is the third cosmic velocity,
 
 - \( M_{\text{sun}} \) and \( M_{\text{earth}} \) are the masses of the Sun and the Earth,
