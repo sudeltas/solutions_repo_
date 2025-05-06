@@ -1,21 +1,67 @@
 # Problem 1
 Exploring the Central Limit Theorem Through Simulations
 📌 Motivation
-The Central Limit Theorem (CLT) states that the sampling distribution of the sample mean approaches a normal distribution as the sample size increases, regardless of the original population distribution (given finite variance).
+The Central Limit Theorem (CLT) is one of the most important theorems in probability and statistics. It states that, regardless of the shape of the original population distribution, the sampling distribution of the sample mean approaches a normal distribution as the sample size increases. This holds true as long as the population has a finite variance.
 
-This concept is fundamental in statistics and forms the basis for inference, hypothesis testing, and confidence intervals.
-🧪 LaTeX – Central Limit Theorem Statement
+In practical terms, the CLT allows us to use normal distribution properties even when the data are not normally distributed. This is a powerful concept, especially in statistical inference, hypothesis testing, and constructing confidence intervals, making it a cornerstone of statistical methodology.
+
+The CLT essentially gives us a way to model the behavior of sample means. When we take multiple samples from any population, no matter its distribution (whether uniform, exponential, binomial, etc.), as the number of observations in each sample increases, the distribution of the sample means will become approximately normal.
+\textbf{Central Limit Theorem Statement:}
+
+The Central Limit Theorem can be mathematically expressed as follows:
+
 \[
-\text{If } X_1, X_2, \dots, X_n \text{ are i.i.d. with mean } \mu \text{ and variance } \sigma^2, \text{ then:}
+\text{If } X_1, X_2, \dots, X_n \text{ are i.i.d. random variables with mean } \mu \text{ and variance } \sigma^2, \text{ then:}
 \]
 
 \[
 \frac{\bar{X}_n - \mu}{\sigma / \sqrt{n}} \xrightarrow{d} \mathcal{N}(0, 1)
 \]
 
+Where:
+- \( X_1, X_2, \dots, X_n \) are independent and identically distributed (i.i.d.) random variables with mean \( \mu \) and variance \( \sigma^2 \).
+- \( \bar{X}_n \) is the sample mean based on a sample of size \( n \).
+- As the sample size \( n \) grows, the distribution of the normalized sample mean \( \frac{\bar{X}_n - \mu}{\sigma / \sqrt{n}} \) converges in distribution to the standard normal distribution \( \mathcal{N}(0, 1) \).
+### Expected Value and Variance of Sample Mean
+
+The expected value and variance of the sample mean are key to understanding the behavior of \( \bar{X}_n \):
+
+#### **Expected Value:**
+The expected value of the sample mean is equal to the population mean, \( \mu \):
+
 \[
-\mathbb{E}[\bar{X}] = \mu, \quad \text{Var}(\bar{X}) = \frac{\sigma^2}{n}
+\mathbb{E}[\bar{X}_n] = \mu
 \]
+
+This means that, on average, the sample mean will be equal to the population mean.
+
+#### **Variance:**
+The variance of the sample mean is equal to the population variance divided by the sample size:
+
+\[
+\text{Var}(\bar{X}_n) = \frac{\sigma^2}{n}
+\]
+
+This shows that as the sample size increases, the variance of the sample mean decreases, leading to more precise estimates of the population mean.
+
+---
+
+### Key Implications of the Central Limit Theorem
+
+#### **1. Large Sample Sizes:**
+The CLT tells us that with sufficiently large sample sizes, the sample mean will approximate a normal distribution regardless of the population's original distribution. For example, even if we are drawing samples from a skewed or bimodal distribution, the distribution of the sample mean will become approximately normal as the sample size grows.
+
+#### **2. Practical Use in Inference:**
+This property allows statisticians to use the normal distribution to make inferences about a population mean, even when the underlying distribution is unknown or non-normal. It simplifies many statistical techniques, such as confidence intervals and hypothesis testing, since the normal distribution is well-understood and has easily calculable properties.
+
+#### **3. Effect of Sample Size:**
+The larger the sample size \( n \), the more closely the sample mean will resemble a normal distribution. However, the rate at which this convergence occurs depends on the population distribution. For populations with high skewness or heavy tails, larger sample sizes may be needed for the sample mean to approximate normality.
+
+---
+
+### Conclusion
+The Central Limit Theorem is foundational to statistics and serves as a powerful tool for making inferences about population parameters, especially when dealing with non-normal data distributions. By understanding the behavior of sample means and their relationship to the underlying population, we can apply the principles of the CLT in a wide range of statistical analyses.
+
 🔢 Step 1: Generate Population Distributions
 ```python
 import numpy as np
@@ -65,7 +111,7 @@ plot_sampling_distribution(pop_binomial, "Binomial")
 
 ```
 ![alt text](image.png)
-![alt text](image-1.png)
+
 📋 Step 2: HTML Table of Population Statistics
 <table border="1">
   <tr>
