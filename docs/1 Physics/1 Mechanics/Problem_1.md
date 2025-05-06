@@ -5,12 +5,12 @@
 Projectile motion describes the motion of an object thrown into the air, subject only to gravitational acceleration.
 
 #🧮 Equations of Motion
-
 The motion is broken into two components:
 
 1.Horizontal (x-axis)
-
 2.Vertical (y-axis)
+
+---
 
 #Initial velocity components:
 
@@ -22,6 +22,8 @@ Position functions:
 
 $x(t) = v_0 \cos(\theta) \cdot t$
 $y(t) = v_0 \sin(\theta) \cdot t - \frac{1}{2} g t^2$
+
+---
 
 #⏱️ Time of Flight
 
@@ -38,6 +40,8 @@ $R = v_{0x} \cdot T$
 $R = \frac{v_0^2 \sin(2\theta)}{g}$
 
 Range is maximum when $\theta = 45^\circ$ because $\sin(2\theta)$ is maximum at $90^\circ$.
+
+---
 
 #📊 2. Detailed Python Simulation
 💡 Objective
@@ -75,6 +79,8 @@ plt.legend()
 plt.tight_layout()
 plt.show()
 ```
+---
+
 🔍 3. Parameters and Their Effects
 <table>
   <thead>
@@ -103,6 +109,7 @@ plt.show()
   </tbody>
 </table>
 
+---
 
 #🌐 4. Real-World Adaptations
 #🏔 Uneven Terrain
@@ -120,7 +127,7 @@ $$
 
 Introduce drag force: $F_d = -kv$ (linear) or $F_d = -kv^2$ (quadratic)
 
-
+---
 
 #🚧 6. Limitations & Future Improvements
 <table>
@@ -150,6 +157,7 @@ Introduce drag force: $F_d = -kv$ (linear) or $F_d = -kv^2$ (quadratic)
   </tbody>
 </table>
 
+---
 
 ✅ Conclusion
 
