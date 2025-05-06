@@ -88,10 +88,74 @@ g_{\text{standard}} \approx 9.81 \, \text{m/s}^2
 
 1. **Tabulated Data:**
 
-| Measurement # | \( T_{\text{10}} \) (seconds) | \( \bar{T_{\text{10}}} \) (seconds) | \( \sigma_{\text{T_{\text{10}}}} \) (seconds) | \( \Delta \bar{T_{\text{10}}} \) (seconds) | \( L \) (meters) | \( T \) (seconds) | \( g \) (m/s\(^2\)) | \( \Delta g \) (m/s\(^2\)) |
-|---------------|------------------------------|-------------------------------------|----------------------------------------------|-------------------------------------------|------------------|------------------|---------------------|------------------------|
-| 1             | \( T_{\text{10,1}} \)         | \( \bar{T_{\text{10}}} \)           | \( \sigma_{\text{T_{\text{10}}}} \)         | \( \Delta \bar{T_{\text{10}}} \)         | \( L_{\text{1}} \) | \( T_{\text{1}} \) | \( g_{\text{1}} \)   | \( \Delta g_{\text{1}} \) |
-| 2             | \( T_{\text{10,2}} \)         |                                     |                                              |                                           |                  |                  |                     |                        |
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Measurement Table</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 8px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <h1>Gravitational Acceleration Measurements</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Measurement #</th>
+                <th>\( T_{\text{10}} \) (seconds)</th>
+                <th>\( \bar{T_{\text{10}}} \) (seconds)</th>
+                <th>\( \sigma_{\text{T_{\text{10}}}} \) (seconds)</th>
+                <th>\( \Delta \bar{T_{\text{10}}} \) (seconds)</th>
+                <th>\( L \) (meters)</th>
+                <th>\( T \) (seconds)</th>
+                <th>\( g \) (m/s\(^2\))</th>
+                <th>\( \Delta g \) (m/s\(^2\))</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>\( T_{\text{10,1}} \)</td>
+                <td>\( \bar{T_{\text{10}}} \)</td>
+                <td>\( \sigma_{\text{T_{\text{10}}}} \)</td>
+                <td>\( \Delta \bar{T_{\text{10}}} \)</td>
+                <td>\( L_{\text{1}} \)</td>
+                <td>\( T_{\text{1}} \)</td>
+                <td>\( g_{\text{1}} \)</td>
+                <td>\( \Delta g_{\text{1}} \)</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>\( T_{\text{10,2}} \)</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
+
 
 2. **Discussion on Sources of Uncertainty:**
    - Measurement resolution: The precision of the ruler and timer limits the accuracy of \( L \) and \( T \).
