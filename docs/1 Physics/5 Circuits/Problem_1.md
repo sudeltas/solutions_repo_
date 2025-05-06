@@ -122,13 +122,13 @@ R_{\text{eq}} = \frac{1}{0.3833} \approx 2.61 \, \Omega
 
 Consider a parallel circuit:
 
-    ---[R1]---
-   |          |
-   |         [R2]
-   |          |
-   |         [R3]
-   |          |
-   -------------
+        ---[R1]---+---[R2]---
+                  |
+                  |
+                 [R3]
+                  |
+                 ---
+
 
 ```python
 import numpy as np
