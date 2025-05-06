@@ -87,32 +87,47 @@ plt.show()
 ---
 
 🔍 3. Parameters and Their Effects
-<table>
-  <thead>
-    <tr>
-      <th>Parameter</th>
-      <th>Symbol</th>
-      <th>Effect on Range</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Initial Velocity</td>
-      <td>&dollar;v_0&dollar;</td>
-      <td>&dollar;R \propto v_0^2&dollar; → Quadratic increase</td>
-    </tr>
-    <tr>
-      <td>Gravity</td>
-      <td>&dollar;g&dollar;</td>
-      <td>&dollar;R \propto \frac{1}{g}&dollar; → Inversely related</td>
-    </tr>
-    <tr>
-      <td>Angle</td>
-      <td>&dollar;\theta&dollar;</td>
-      <td>&dollar;R \propto \sin(2\theta)&dollar; → Max at &dollar;45^\circ&dollar;</td>
-    </tr>
-  </tbody>
-</table>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projectile Motion Table</title>
+    <!-- MathJax script -->
+    <script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+</head>
+<body>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Symbol</th>
+                <th>Effect on Range</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Initial Velocity</td>
+                <td>\( v_0 \)</td>
+                <td>\( R \propto v_0^2 \) → Quadratic increase</td>
+            </tr>
+            <tr>
+                <td>Gravity</td>
+                <td>\( g \)</td>
+                <td>\( R \propto \frac{1}{g} \) → Inversely related</td>
+            </tr>
+            <tr>
+                <td>Angle</td>
+                <td>\( \theta \)</td>
+                <td>\( R \propto \sin(2\theta) \) → Max at \( 45^\circ \)</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
+
 
 ---
 
