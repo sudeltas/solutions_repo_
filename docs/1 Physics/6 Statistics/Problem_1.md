@@ -1,5 +1,6 @@
 # Problem 1
 Exploring the Central Limit Theorem Through Simulations
+
 📌 Motivation
 The Central Limit Theorem (CLT) is one of the most important theorems in probability and statistics. It states that, regardless of the shape of the original population distribution, the sampling distribution of the sample mean approaches a normal distribution as the sample size increases. This holds true as long as the population has a finite variance.
 
