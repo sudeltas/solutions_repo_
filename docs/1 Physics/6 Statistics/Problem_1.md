@@ -35,13 +35,17 @@ N = 100_000
 pop_uniform = np.random.uniform(0, 1, N)
 pop_exponential = np.random.exponential(1, N)
 pop_binomial = np.random.binomial(n=10, p=0.5, size=N)
+
+# Function to get sample means
 def sample_means(population, sample_size=30, n_samples=1000):
     means = []
     for _ in range(n_samples):
         sample = np.random.choice(population, size=sample_size, replace=False)
         means.append(np.mean(sample))
     return np.array(means)
-    def plot_sampling_distribution(population, name, sample_sizes=[5, 10, 30, 50]):
+
+# Function to plot the sampling distribution
+def plot_sampling_distribution(population, name, sample_sizes=[5, 10, 30, 50]):
     plt.figure(figsize=(16, 10))
     for i, size in enumerate(sample_sizes, 1):
         means = sample_means(population, sample_size=size)
@@ -53,10 +57,15 @@ def sample_means(population, sample_size=30, n_samples=1000):
     plt.suptitle(f"Sampling Distributions from {name} Population", fontsize=16)
     plt.tight_layout(rect=[0, 0, 1, 0.96])
     plt.show()
-    plot_sampling_distribution(pop_uniform, "Uniform")
+
+# Plot sampling distributions for each population
+plot_sampling_distribution(pop_uniform, "Uniform")
 plot_sampling_distribution(pop_exponential, "Exponential")
 plot_sampling_distribution(pop_binomial, "Binomial")
+
 ```
+![alt text](image.png)
+![alt text](image-1.png)
 📋 Step 2: HTML Table of Population Statistics
 <table border="1">
   <tr>
