@@ -368,7 +368,8 @@ print(f"Estimated Pi (Buffon's Needle): {pi_estimate_buffon}")
 <p>We calculate how many points fall inside the unit circle by checking the condition:
    [
    x^2 + y^2 \leq 1
-   ]</p>
+   ]
+   where <span class="arithmatex">\( x \)</span> and <span class="arithmatex">\( y \)</span> are the coordinates of the points.</p>
 </li>
 <li>
 <p><strong>Pi Estimation:</strong></p>
@@ -376,7 +377,8 @@ print(f"Estimated Pi (Buffon's Needle): {pi_estimate_buffon}")
 <li>Using the ratio of points inside the circle to the total number of points, we estimate <span class="arithmatex">\( \pi \)</span> using the formula:
    [
    \pi \approx 4 \times \frac{\text{Points Inside Circle}}{\text{Total Points}}
-   ]</li>
+   ]
+   This formula works because the ratio of points inside the circle to the total number of points inside the square approximates the area of the circle relative to the square, and the area of the circle is <span class="arithmatex">\( \pi \times r^2 \)</span>, where <span class="arithmatex">\( r = 1 \)</span>.</li>
 </ol>
 <h4 id="buffons-needle-method">Buffon’s Needle Method:</h4>
 <ol>
@@ -387,9 +389,13 @@ print(f"Estimated Pi (Buffon's Needle): {pi_estimate_buffon}")
 <li>
 <p><strong>Crossing Detection:</strong></p>
 </li>
-<li>For each needle drop, we randomly select an angle <span class="arithmatex">\( \theta \)</span> of the needle and calculate the distance from the center of the needle to the nearest line.</li>
+<li>For each needle drop, we randomly select an angle <span class="arithmatex">\( \theta \)</span> of the needle with respect to the parallel lines (ranging from 0 to <span class="arithmatex">\( \frac{\pi}{2} \)</span>).</li>
 <li>
-<p>If the needle crosses a line, we count that as a crossing.</p>
+<p>We also randomly choose the distance <span class="arithmatex">\( x \)</span> from the center of the needle to the nearest line. The needle crosses a line if:
+   [
+   x \leq \frac{L}{2} \sin(\theta)
+   ]
+   where <span class="arithmatex">\( \theta \)</span> is the angle and <span class="arithmatex">\( x \)</span> is the distance from the center of the needle to the closest line.</p>
 </li>
 <li>
 <p><strong>Pi Estimation:</strong></p>
@@ -404,6 +410,7 @@ print(f"Estimated Pi (Buffon's Needle): {pi_estimate_buffon}")
 <li><span class="arithmatex">\( N_{\text{drops}} \)</span> is the number of needle drops, and</li>
 <li><span class="arithmatex">\( N_{\text{crossings}} \)</span> is the number of times the needle crosses a line.</li>
 </ol>
+<p>The key idea behind Buffon’s Needle is that the probability of a needle crossing a line is proportional to <span class="arithmatex">\( \frac{2L}{d\pi} \)</span>, and by performing many needle drops, we can estimate <span class="arithmatex">\( \pi \)</span> based on the number of crossings.</p>
 <h4 id="visualization">Visualization:</h4>
 <ul>
 <li>
