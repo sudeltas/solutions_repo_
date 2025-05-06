@@ -177,14 +177,16 @@
 <p>Projectile motion describes the motion of an object thrown into the air, subject only to gravitational acceleration.</p>
 <h1 id="equations-of-motion">🧮 Equations of Motion</h1>
 <p>The motion is broken into two components:</p>
-<p>1.Horizontal (x-axis)</p>
-<p>2.Vertical (y-axis)</p>
+<p>1.Horizontal (x-axis)
+2.Vertical (y-axis)</p>
+<hr/>
 <h1 id="initial-velocity-components">Initial velocity components:</h1>
 <p><span class="arithmatex">\(v_{0x} = v_0 \cos(\theta)\)</span></p>
 <p><span class="arithmatex">\(v_{0y} = v_0 \sin(\theta)\)</span></p>
 <p>Position functions:</p>
 <p><span class="arithmatex">\(x(t) = v_0 \cos(\theta) \cdot t\)</span>
 <span class="arithmatex">\(y(t) = v_0 \sin(\theta) \cdot t - \frac{1}{2} g t^2\)</span></p>
+<hr/>
 <h1 id="time-of-flight">⏱️ Time of Flight</h1>
 <p>For a projectile launched and landing at the same height:</p>
 <p><span class="arithmatex">\(T = \frac{2v_0 \sin(\theta)}{g}\)</span></p>
@@ -193,6 +195,7 @@
 <p><span class="arithmatex">\(R = v_{0x} \cdot T\)</span></p>
 <p><span class="arithmatex">\(R = \frac{v_0^2 \sin(2\theta)}{g}\)</span></p>
 <p>Range is maximum when <span class="arithmatex">\(\theta = 45^\circ\)</span> because <span class="arithmatex">\(\sin(2\theta)\)</span> is maximum at <span class="arithmatex">\(90^\circ\)</span>.</p>
+<hr/>
 <h1 id="2-detailed-python-simulation">📊 2. Detailed Python Simulation</h1>
 <p>💡 Objective</p>
 <p>Simulate and visualize how the range changes with projection angle. Also show effects of varying initial speed and gravity.</p>
@@ -226,6 +229,7 @@ plt.legend()
 plt.tight_layout()
 plt.show()
 </code></pre>
+<hr/>
 <p>🔍 3. Parameters and Their Effects</p>
 <table>
 <thead>
@@ -253,6 +257,7 @@ plt.show()
 </tr>
 </tbody>
 </table>
+<hr/>
 <h1 id="4-real-world-adaptations">🌐 4. Real-World Adaptations</h1>
 <h1 id="uneven-terrain">🏔 Uneven Terrain</h1>
 <p>If the launch and landing heights differ (e.g., launched from a cliff or building), the vertical motion equation becomes:</p>
@@ -264,6 +269,7 @@ y(t) = v_0 \sin(\theta)t - \frac{1}{2}gt^2
 \]</div>
 <h1 id="with-air-resistance">💨 With Air Resistance</h1>
 <p>Introduce drag force: <span class="arithmatex">\(F_d = -kv\)</span> (linear) or <span class="arithmatex">\(F_d = -kv^2\)</span> (quadratic)</p>
+<hr/>
 <h1 id="6-limitations-future-improvements">🚧 6. Limitations &amp; Future Improvements</h1>
 <table>
 <thead>
@@ -291,6 +297,7 @@ y(t) = v_0 \sin(\theta)t - \frac{1}{2}gt^2
 </tr>
 </tbody>
 </table>
+<hr/>
 <p>✅ Conclusion</p>
 <p>Projectile motion is a powerful model that reveals deep physical insights using relatively simple mathematics. 
 By changing angle, speed, and environment, we unlock a vast space of real-world applications — from sports to space science.</p>
