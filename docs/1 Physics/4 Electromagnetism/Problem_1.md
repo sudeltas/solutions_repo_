@@ -41,53 +41,49 @@ We will simulate the trajectory of a charged particle under various field config
 The simplest case to start with is the motion of a charged particle in a uniform magnetic field. The particle will experience circular motion due to the Lorentz force.
 
 #Python Code (Uniform Magnetic Field)
-
-```python
+```Python
 import numpy as np
 import matplotlib.pyplot as plt
 
 # Constants
 q = 1.6e-19  # Charge of particle (Coulombs)
 m = 9.11e-31  # Mass of electron (kg)
-B = np.array([0, 0, 1])  # Uniform magnetic field along z-axis (Tesla)
+B = np.array([0, 0, 0.01])  # Magnetic field (Tesla)
 
 # Initial conditions
-v0 = np.array([1e5, 0, 0])  # Initial velocity (m/s) along x-axis
-r0 = np.array([0, 0, 0])  # Initial position at origin
+v0 = np.array([1e4, 0, 0])  # Initial velocity (m/s)
+r0 = np.array([0, 0, 0])  # Initial position
 
 # Time setup
-dt = 1e-9  # Time step (seconds)
-T = 1e-6  # Total simulation time (seconds)
-steps = int(T / dt)  # Number of steps
+dt = 1e-11  # Time step (seconds)
+T = 1e-7  # Total simulation time (seconds)
+steps = int(T / dt)
 
-# Initialize arrays to store positions and velocities
+# Arrays
 r = np.zeros((steps, 3))
 v = np.zeros((steps, 3))
 r[0] = r0
 v[0] = v0
 
-# Euler's method for updating position and velocity
+# Euler method
 for i in range(1, steps):
-    # Lorentz force calculation
-    F = q * np.cross(v[i-1], B)  # Magnetic force (since E = 0)
-    a = F / m  # Acceleration (F = ma)
-    
-    # Update velocity and position
+    F = q * np.cross(v[i-1], B)
+    a = F / m
     v[i] = v[i-1] + a * dt
     r[i] = r[i-1] + v[i] * dt
 
-# Plot the trajectory in 3D
+# Plot
 fig = plt.figure(figsize=(10, 7))
 ax = fig.add_subplot(111, projection='3d')
-ax.plot(r[:, 0], r[:, 1], r[:, 2], label="Particle Trajectory", color='b')
+ax.plot(r[:, 0], r[:, 1], r[:, 2], color='b')
 ax.set_xlabel("X Position (m)")
 ax.set_ylabel("Y Position (m)")
 ax.set_zlabel("Z Position (m)")
-ax.set_title("Particle Trajectory in a Uniform Magnetic Field")
-plt.legend()
+ax.set_title("Electron Trajectory in Uniform Magnetic Field")
+plt.legend(["Trajectory"])
 plt.show()
 ```
-![alt text](image.png)
+![alt text](image-3.png)
 
 In this code:
 
@@ -105,36 +101,52 @@ Now let's simulate the motion of a charged particle in both electric and magneti
 ---
 
 Python Code (Combined Electric and Magnetic Fields)
-
-```python
+```Python
 import numpy as np
 import matplotlib.pyplot as plt
 
-# Electric field (along the x-axis)
-E = np.array([1e3, 0, 0])  # Electric field (V/m)
+# Constants
+q = 1.6e-19  # Charge of electron (Coulombs)
+m = 9.11e-31  # Mass of electron (kg)
 
-# Modified Euler's method for combined E and B fields
+# Electric and magnetic fields (reduced values)
+E = np.array([1, 0, 0])      # Electric field along x-axis (V/m)
+B = np.array([0, 0, 1e-4])   # Magnetic field along z-axis (Tesla)
+
+# Initial conditions
+v0 = np.array([1e3, 0, 0])  # Initial velocity (m/s)
+r0 = np.array([0, 0, 0])    # Initial position (at origin)
+
+# Time setup
+dt = 1e-9       # Time step (seconds)
+T = 1e-6        # Total simulation time (seconds)
+steps = int(T / dt)
+
+# Arrays to store position and velocity
+r = np.zeros((steps, 3))
+v = np.zeros((steps, 3))
+r[0] = r0
+v[0] = v0
+
+# Modified Euler's method to solve motion
 for i in range(1, steps):
-    # Lorentz force calculation (E + v x B)
-    F = q * (E + np.cross(v[i-1], B))  # Total Lorentz force
-    a = F / m  # Acceleration
-    
-    # Update velocity and position
-    v[i] = v[i-1] + a * dt
-    r[i] = r[i-1] + v[i] * dt
+    F = q * (E + np.cross(v[i-1], B))  # Lorentz force
+    a = F / m                          # Acceleration
+    v[i] = v[i-1] + a * dt             # Update velocity
+    r[i] = r[i-1] + v[i] * dt          # Update position
 
-# Plot the trajectory in 3D
+# Plot the particle trajectory in 3D
 fig = plt.figure(figsize=(10, 7))
 ax = fig.add_subplot(111, projection='3d')
-ax.plot(r[:, 0], r[:, 1], r[:, 2], label="Particle Trajectory with E and B Fields", color='g')
+ax.plot(r[:, 0], r[:, 1], r[:, 2], label="Particle Trajectory", color='purple')
 ax.set_xlabel("X Position (m)")
 ax.set_ylabel("Y Position (m)")
 ax.set_zlabel("Z Position (m)")
-ax.set_title("Particle Trajectory in Combined Electric and Magnetic Fields")
+ax.set_title("Particle Trajectory in Weak Electric and Magnetic Fields")
 plt.legend()
 plt.show()
 ```
-![alt text](image-1.png)
+![alt text](image-4.png)
 
 ---
 
@@ -153,24 +165,39 @@ Next, let's consider the case where the electric and magnetic fields are perpend
 ---
 
 Python Code (Crossed Electric and Magnetic Fields)
-
-```python
+```Python
 import numpy as np
 import matplotlib.pyplot as plt
 
+# Constants
+q = 1.6e-19     # Electron charge (C)
+m = 9.11e-31    # Electron mass (kg)
+
 # Crossed fields: Electric field along x-axis, magnetic field along y-axis
-E = np.array([1e3, 0, 0])  # Electric field (V/m)
-B = np.array([0, 1, 0])  # Magnetic field (Tesla)
+E = np.array([1, 0, 0])        # Small electric field (V/m)
+B = np.array([0, 1e-4, 0])     # Small magnetic field (T)
+
+# Initial conditions
+v0 = np.array([0, 0, 1e3])     # Initial velocity (m/s) along z-axis
+r0 = np.array([0, 0, 0])       # Initial position at origin
+
+# Time setup
+dt = 1e-9      # Time step (s)
+T = 1e-6       # Total time (s)
+steps = int(T / dt)
+
+# Arrays to store position and velocity
+r = np.zeros((steps, 3))
+v = np.zeros((steps, 3))
+r[0] = r0
+v[0] = v0
 
 # Modified Euler's method for crossed fields
 for i in range(1, steps):
-    # Lorentz force calculation (E + v x B)
-    F = q * (E + np.cross(v[i-1], B))  # Total Lorentz force
-    a = F / m  # Acceleration
-    
-    # Update velocity and position
-    v[i] = v[i-1] + a * dt
-    r[i] = r[i-1] + v[i] * dt
+    F = q * (E + np.cross(v[i-1], B))  # Lorentz force
+    a = F / m                          # Acceleration
+    v[i] = v[i-1] + a * dt             # Update velocity
+    r[i] = r[i-1] + v[i] * dt          # Update position
 
 # Plot the trajectory in 3D
 fig = plt.figure(figsize=(10, 7))
@@ -179,11 +206,11 @@ ax.plot(r[:, 0], r[:, 1], r[:, 2], label="Particle Trajectory with Crossed Field
 ax.set_xlabel("X Position (m)")
 ax.set_ylabel("Y Position (m)")
 ax.set_zlabel("Z Position (m)")
-ax.set_title("Particle Trajectory in Crossed Electric and Magnetic Fields")
+ax.set_title("Particle Trajectory in Weak Crossed Electric and Magnetic Fields")
 plt.legend()
 plt.show()
 ```
-![alt text](image-2.png)
+![alt text](image-5.png)
 
 ---
 
