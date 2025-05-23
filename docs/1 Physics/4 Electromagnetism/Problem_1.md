@@ -217,14 +217,14 @@ plt.show()
 In this scenario:
 
 - The **electric field** \( \mathbf{E} \) is along the **x-axis**:  
-  \[
+  $$
   \mathbf{E} = E_x \hat{i}
-  \]
+  $$
 
 - The **magnetic field** \( \mathbf{B} \) is along the **y-axis**:  
-  \[
+  $$
   \mathbf{B} = B_y \hat{j}
-  \]
+  $$
 
 The particle experiences a more complex path due to the **crossed fields**.
 
